@@ -136,21 +136,23 @@
   "s": "India's appeal rejected: the ICAO Council has jurisdiction over Pakistan's complaint."
  },
  "55:1974-07-25": {
-  "o": "breach",
+  "o": "declaratory",
   "r": [
+   "declaration",
    "negotiate"
   ],
-  "s": "Iceland's 50-mile fishery limits are not opposable to the United Kingdom; both states must negotiate an equitable solution."
+  "s": "Iceland's 50-mile fishery limits are not opposable to the United Kingdom, and Iceland may not unilaterally exclude British vessels; both states must negotiate an equitable solution."
  },
  "56:1974-07-25": {
-  "o": "breach",
+  "o": "declaratory",
   "r": [
+   "declaration",
    "negotiate"
   ],
   "d": [
    "compensation"
   ],
-  "s": "Iceland's 50-mile fishery limits are not opposable to Germany; both must negotiate. Germany's claim for compensation was not upheld."
+  "s": "Iceland's 50-mile fishery limits are not opposable to Germany, and Iceland may not unilaterally exclude German vessels; both must negotiate. Germany's claim for compensation was not upheld."
  },
  "58:1974-12-20": {
   "o": "dismissed",
@@ -173,8 +175,7 @@
    "cessation",
    "restitution",
    "performance",
-   "compensation",
-   "non-repetition"
+   "compensation"
   ],
   "s": "Iran violated its obligations to the United States; it must release the hostages, hand over the embassy premises and not try any diplomatic staff, and owes reparation (amount reserved)."
  },
@@ -242,7 +243,10 @@
  "90:2003-11-06": {
   "o": "no-breach",
   "r": [],
-  "s": "U.S. attacks on Iranian oil platforms could not be justified as self-defence but did not breach the treaty's commerce clause; the U.S. counter-claim also rejected."
+  "s": "U.S. attacks on Iranian oil platforms could not be justified as measures to protect essential security interests, but did not breach the treaty's freedom-of-commerce clause, so Iran's claim for reparation failed; the U.S. counter-claim was also rejected.",
+  "d": [
+   "compensation"
+  ]
  },
  "91:2007-02-26": {
   "o": "breach",
