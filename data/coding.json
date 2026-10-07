@@ -1,0 +1,665 @@
+{
+ "_about": "Hand coding of ICJ merits, compensation and interpretation judgments and of advisory opinions with remedial content, read against each decision's operative part. Keys are caseno:date. o = outcome; r = remedies ordered or declared; d = remedies asked for and refused; amt = sums awarded; s = summary in our words. Remedy keys: declaration, satisfaction, cessation, restitution, performance, compensation, non-repetition, negotiate. Outcomes: breach, mixed, no-breach, title, dismissed, compensation, interpretation, declaratory, advisory.",
+ "1:1949-04-09": {
+  "o": "mixed",
+  "r": [
+   "compensation",
+   "satisfaction"
+  ],
+  "s": "Albania responsible for the mine explosions and owes compensation (amount reserved); the British minesweeping of November 1946 violated Albanian sovereignty, and that declaration is itself appropriate satisfaction."
+ },
+ "1:1949-12-15": {
+  "o": "compensation",
+  "r": [
+   "compensation"
+  ],
+  "amt": [
+   [
+    "GBP",
+    843947
+   ]
+  ],
+  "s": "Albania ordered to pay the United Kingdom £843,947 for the loss of HMS Saumarez, damage to HMS Volage and the deaths and injuries of naval personnel."
+ },
+ "5:1951-12-18": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Norway's method of drawing straight baselines for its fisheries zone is not contrary to international law."
+ },
+ "7:1950-11-20": {
+  "o": "breach",
+  "r": [
+   "declaration"
+  ],
+  "s": "Colombia's grant of asylum to Haya de la Torre was not in conformity with the Havana Convention (Peru's counter-claim); Colombia's own submissions rejected."
+ },
+ "11:1952-08-27": {
+  "o": "mixed",
+  "r": [
+   "declaration"
+  ],
+  "s": "France's 1948 import decree breached U.S. treaty rights in Morocco, but most U.S. claims to consular jurisdiction and tax exemptions were rejected."
+ },
+ "13:1950-11-27": {
+  "o": "interpretation",
+  "r": [],
+  "s": "Colombia's request to interpret the Asylum judgment declared inadmissible."
+ },
+ "14:1951-06-13": {
+  "o": "declaratory",
+  "r": [
+   "declaration"
+  ],
+  "d": [
+   "restitution"
+  ],
+  "s": "Asylum should have ended, but Colombia is not obliged to surrender Haya de la Torre to Peru; the Court declined to say how the asylum should be terminated."
+ },
+ "15:1953-05-19": {
+  "o": "declaratory",
+  "r": [
+   "performance"
+  ],
+  "s": "The United Kingdom must submit the Ambatielos claim to arbitration under the 1926 Declaration."
+ },
+ "17:1953-11-17": {
+  "o": "title",
+  "r": [],
+  "s": "Sovereignty over the Minquiers and Ecrehos belongs to the United Kingdom."
+ },
+ "18:1955-04-06": {
+  "o": "dismissed",
+  "r": [],
+  "s": "Liechtenstein's claim on behalf of Nottebohm inadmissible for want of a genuine link."
+ },
+ "32:1960-04-12": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Portugal had a right of passage for civilians to its enclaves but not for armed forces; India did not act contrary to its obligations."
+ },
+ "33:1958-11-28": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Netherlands' claim that Sweden breached the 1902 Guardianship Convention rejected."
+ },
+ "38:1959-06-20": {
+  "o": "title",
+  "r": [],
+  "s": "Sovereignty over the disputed plots belongs to Belgium."
+ },
+ "39:1960-11-18": {
+  "o": "declaratory",
+  "r": [
+   "performance"
+  ],
+  "s": "The King of Spain's 1906 award is valid and binding, and Nicaragua must give effect to it."
+ },
+ "45:1962-06-15": {
+  "o": "title",
+  "r": [
+   "restitution"
+  ],
+  "s": "The Temple of Preah Vihear is on Cambodian territory; Thailand must withdraw its forces and restore any objects removed from the Temple."
+ },
+ "46:1966-07-18": {
+  "o": "dismissed",
+  "r": [],
+  "s": "By the President's casting vote, Ethiopia and Liberia were held to have no legal right or interest in their claims against South Africa."
+ },
+ "47:1966-07-18": {
+  "o": "dismissed",
+  "r": [],
+  "s": "By the President's casting vote, Ethiopia and Liberia were held to have no legal right or interest in their claims against South Africa."
+ },
+ "50:1970-02-05": {
+  "o": "dismissed",
+  "r": [],
+  "s": "Belgium had no standing to protect the shareholders of a Canadian company; claim rejected."
+ },
+ "51:1969-02-20": {
+  "o": "title",
+  "r": [
+   "negotiate"
+  ],
+  "s": "Equidistance is not obligatory; the continental shelf is to be delimited by agreement in accordance with equitable principles."
+ },
+ "52:1969-02-20": {
+  "o": "title",
+  "r": [
+   "negotiate"
+  ],
+  "s": "Equidistance is not obligatory; the continental shelf is to be delimited by agreement in accordance with equitable principles."
+ },
+ "54:1972-08-18": {
+  "o": "no-breach",
+  "r": [],
+  "s": "India's appeal rejected: the ICAO Council has jurisdiction over Pakistan's complaint."
+ },
+ "55:1974-07-25": {
+  "o": "breach",
+  "r": [
+   "negotiate"
+  ],
+  "s": "Iceland's 50-mile fishery limits are not opposable to the United Kingdom; both states must negotiate an equitable solution."
+ },
+ "56:1974-07-25": {
+  "o": "breach",
+  "r": [
+   "negotiate"
+  ],
+  "d": [
+   "compensation"
+  ],
+  "s": "Iceland's 50-mile fishery limits are not opposable to Germany; both must negotiate. Germany's claim for compensation was not upheld."
+ },
+ "58:1974-12-20": {
+  "o": "dismissed",
+  "r": [],
+  "s": "France's public undertakings to stop atmospheric testing left Australia's claim without object."
+ },
+ "59:1974-12-20": {
+  "o": "dismissed",
+  "r": [],
+  "s": "France's public undertakings to stop atmospheric testing left New Zealand's claim without object."
+ },
+ "63:1982-02-24": {
+  "o": "title",
+  "r": [],
+  "s": "The Court set out the principles and method for delimiting the continental shelf between Tunisia and Libya."
+ },
+ "64:1980-05-24": {
+  "o": "breach",
+  "r": [
+   "cessation",
+   "restitution",
+   "performance",
+   "compensation",
+   "non-repetition"
+  ],
+  "s": "Iran violated its obligations to the United States; it must release the hostages, hand over the embassy premises and not try any diplomatic staff, and owes reparation (amount reserved)."
+ },
+ "67:1984-10-12": {
+  "o": "title",
+  "r": [],
+  "s": "A Chamber drew the single maritime boundary in the Gulf of Maine."
+ },
+ "68:1985-06-03": {
+  "o": "title",
+  "r": [],
+  "s": "Continental shelf boundary between Libya and Malta drawn."
+ },
+ "69:1986-12-22": {
+  "o": "title",
+  "r": [],
+  "s": "A Chamber fixed the frontier line between Burkina Faso and Mali."
+ },
+ "70:1986-06-27": {
+  "o": "breach",
+  "r": [
+   "cessation",
+   "compensation"
+  ],
+  "s": "The United States breached customary law and the 1956 treaty by supporting the contras, mining harbours and attacking Nicaragua; it must cease and make reparation (amount reserved, never fixed)."
+ },
+ "71:1985-12-10": {
+  "o": "interpretation",
+  "r": [],
+  "s": "Tunisia's request for revision inadmissible; the 1982 judgment interpreted on two points."
+ },
+ "75:1992-09-11": {
+  "o": "title",
+  "r": [],
+  "s": "A Chamber decided the land boundary, the islands and the waters of the Gulf of Fonseca between El Salvador and Honduras."
+ },
+ "76:1989-07-20": {
+  "o": "no-breach",
+  "r": [],
+  "d": [
+   "compensation"
+  ],
+  "s": "Italy did not breach the treaty with the United States in the ELSI requisition; the claim for reparation rejected."
+ },
+ "78:1993-06-14": {
+  "o": "title",
+  "r": [],
+  "s": "Maritime boundary between Greenland and Jan Mayen drawn."
+ },
+ "82:1991-11-12": {
+  "o": "no-breach",
+  "r": [],
+  "s": "The 1989 arbitral award is valid and binding on Guinea-Bissau and Senegal."
+ },
+ "83:1994-02-03": {
+  "o": "title",
+  "r": [],
+  "s": "The boundary between Libya and Chad is defined by the 1955 treaty; the Aouzou Strip is Chadian."
+ },
+ "87:2001-03-16": {
+  "o": "title",
+  "r": [],
+  "s": "Bahrain has the Hawar Islands and Qit'at Jaradah; Qatar has Zubarah and Janan; a single maritime boundary drawn."
+ },
+ "90:2003-11-06": {
+  "o": "no-breach",
+  "r": [],
+  "s": "U.S. attacks on Iranian oil platforms could not be justified as self-defence but did not breach the treaty's commerce clause; the U.S. counter-claim also rejected."
+ },
+ "91:2007-02-26": {
+  "o": "breach",
+  "r": [
+   "performance",
+   "satisfaction"
+  ],
+  "d": [
+   "compensation",
+   "non-repetition"
+  ],
+  "s": "Serbia did not commit genocide but failed to prevent the Srebrenica genocide and to punish (by transferring Mladić to the ICTY); declaration is satisfaction, compensation and assurances refused."
+ },
+ "92:1997-09-25": {
+  "o": "mixed",
+  "r": [
+   "negotiate",
+   "performance",
+   "compensation"
+  ],
+  "s": "Both Hungary and Czechoslovakia/Slovakia acted unlawfully; the 1977 treaty remains in force, they must negotiate in good faith and compensate each other."
+ },
+ "94:2002-10-10": {
+  "o": "title",
+  "r": [
+   "restitution"
+  ],
+  "d": [
+   "compensation"
+  ],
+  "s": "Bakassi and the Lake Chad area are Cameroonian; each state must withdraw its administration and forces from the other's territory; Cameroon's responsibility claims and Nigeria's counter-claims rejected."
+ },
+ "98:1999-12-13": {
+  "o": "title",
+  "r": [],
+  "s": "Kasikili/Sedudu Island belongs to Botswana, with equal navigation rights for both states."
+ },
+ "102:2002-12-17": {
+  "o": "title",
+  "r": [],
+  "s": "Sovereignty over Ligitan and Sipadan belongs to Malaysia."
+ },
+ "103:2010-11-30": {
+  "o": "breach",
+  "r": [
+   "compensation"
+  ],
+  "s": "The DRC violated Diallo's rights in arresting, detaining and expelling him and must pay compensation (amount fixed later)."
+ },
+ "103:2012-06-19": {
+  "o": "compensation",
+  "r": [
+   "compensation"
+  ],
+  "d": [
+   "compensation"
+  ],
+  "amt": [
+   [
+    "USD",
+    95000
+   ]
+  ],
+  "s": "The DRC ordered to pay Guinea US$95,000 for Diallo's injuries ($85,000 non-material, $10,000 property); other heads of loss and costs refused."
+ },
+ "104:2001-06-27": {
+  "o": "breach",
+  "r": [
+   "performance",
+   "non-repetition"
+  ],
+  "s": "The United States breached the Vienna Convention and the provisional measures order; in future cases it must allow review and reconsideration, and its commitment meets the request for assurances."
+ },
+ "116:2005-12-19": {
+  "o": "mixed",
+  "r": [
+   "compensation"
+  ],
+  "s": "Uganda violated the prohibition of force, humanitarian and human rights law and the duty of vigilance over resources; the DRC attacked Uganda's embassy. Each owes reparation (fixed later for the DRC)."
+ },
+ "116:2022-02-09": {
+  "o": "compensation",
+  "r": [
+   "compensation"
+  ],
+  "d": [
+   "compensation"
+  ],
+  "amt": [
+   [
+    "USD",
+    325000000
+   ]
+  ],
+  "s": "Uganda ordered to pay the DRC US$325 million ($225m persons, $40m property, $60m natural resources) in five instalments; costs refused."
+ },
+ "118:2015-02-03": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Croatia's genocide claim and Serbia's counter-claim both rejected."
+ },
+ "120:2007-10-08": {
+  "o": "title",
+  "r": [
+   "negotiate"
+  ],
+  "s": "Honduras has the four cays; a single maritime boundary drawn; parties must negotiate the line near the river mouth."
+ },
+ "121:2002-02-14": {
+  "o": "breach",
+  "r": [
+   "restitution"
+  ],
+  "s": "Belgium's arrest warrant violated the immunity of the DRC's foreign minister; Belgium must cancel it."
+ },
+ "122:2003-02-03": {
+  "o": "interpretation",
+  "r": [],
+  "s": "Yugoslavia's request to revise the 1996 jurisdiction judgment inadmissible."
+ },
+ "124:2012-11-19": {
+  "o": "title",
+  "r": [],
+  "d": [
+   "declaration"
+  ],
+  "s": "All disputed cays belong to Colombia; the maritime boundary drawn; Nicaragua's claim that Colombia acted unlawfully rejected."
+ },
+ "125:2005-07-12": {
+  "o": "title",
+  "r": [],
+  "s": "A Chamber fixed the Benin–Niger boundary in the Niger and Mekrou rivers and allocated the islands."
+ },
+ "127:2003-12-18": {
+  "o": "interpretation",
+  "r": [],
+  "s": "El Salvador's request to revise the 1992 Gulf of Fonseca judgment inadmissible."
+ },
+ "128:2004-03-31": {
+  "o": "breach",
+  "r": [
+   "performance",
+   "non-repetition"
+  ],
+  "d": [
+   "restitution"
+  ],
+  "s": "The United States breached consular-notification duties for 51 Mexicans and must provide review and reconsideration of their convictions; Mexico's request to annul them refused."
+ },
+ "130:2008-05-23": {
+  "o": "title",
+  "r": [],
+  "s": "Pedra Branca belongs to Singapore, Middle Rocks to Malaysia."
+ },
+ "132:2009-02-03": {
+  "o": "title",
+  "r": [],
+  "s": "Maritime boundary between Romania and Ukraine in the Black Sea drawn."
+ },
+ "133:2009-07-13": {
+  "o": "breach",
+  "r": [
+   "declaration"
+  ],
+  "s": "Costa Rica's navigation rights on the San Juan defined; Nicaragua acted unlawfully in requiring visas, tourist cards and fees; other submissions rejected."
+ },
+ "135:2010-04-20": {
+  "o": "breach",
+  "r": [
+   "satisfaction"
+  ],
+  "d": [
+   "restitution",
+   "compensation"
+  ],
+  "s": "Uruguay breached its procedural duties to inform and consult; the declaration is satisfaction. No substantive breach, so dismantling the mill and compensation refused."
+ },
+ "136:2008-06-04": {
+  "o": "breach",
+  "r": [
+   "satisfaction"
+  ],
+  "s": "France failed to give reasons for refusing Djibouti's letter rogatory; the finding is appropriate satisfaction, all other claims rejected."
+ },
+ "137:2014-01-27": {
+  "o": "title",
+  "r": [],
+  "s": "Maritime boundary between Peru and Chile follows the parallel for 80 nautical miles, then an equidistance line."
+ },
+ "139:2009-01-19": {
+  "o": "interpretation",
+  "r": [],
+  "d": [
+   "non-repetition"
+  ],
+  "s": "No dispute requiring interpretation of Avena; the United States breached the 2008 order by executing Medellín; guarantees of non-repetition refused."
+ },
+ "142:2011-12-05": {
+  "o": "breach",
+  "r": [
+   "declaration"
+  ],
+  "d": [
+   "cessation"
+  ],
+  "s": "Greece breached the Interim Accord by objecting to North Macedonia's NATO admission; the declaration suffices, other submissions rejected."
+ },
+ "143:2012-02-03": {
+  "o": "breach",
+  "r": [
+   "restitution",
+   "performance"
+  ],
+  "d": [
+   "non-repetition"
+  ],
+  "s": "Italy violated Germany's immunity; by legislation or otherwise it must ensure its courts' decisions cease to have effect. Other submissions rejected."
+ },
+ "144:2012-07-20": {
+  "o": "breach",
+  "r": [
+   "performance"
+  ],
+  "s": "Senegal breached the Torture Convention; it must, without further delay, submit Hissène Habré's case for prosecution if it does not extradite him."
+ },
+ "148:2014-03-31": {
+  "o": "breach",
+  "r": [
+   "cessation"
+  ],
+  "s": "Japan's JARPA II whaling is not for scientific research; Japan must revoke existing permits and grant no more."
+ },
+ "149:2013-04-16": {
+  "o": "title",
+  "r": [],
+  "s": "The frontier between Burkina Faso and Niger fixed."
+ },
+ "150:2015-12-16": {
+  "o": "breach",
+  "r": [
+   "compensation"
+  ],
+  "d": [
+   "compensation"
+  ],
+  "s": "The disputed territory is Costa Rica's; Nicaragua violated its sovereignty, navigation rights and provisional measures and must compensate (amount fixed later). Costs refused."
+ },
+ "150:2018-02-02": {
+  "o": "compensation",
+  "r": [
+   "compensation"
+  ],
+  "amt": [
+   [
+    "USD",
+    378890.59
+   ]
+  ],
+  "s": "Nicaragua ordered to pay Costa Rica US$378,890.59 for environmental damage and costs, the Court's first award for environmental harm."
+ },
+ "152:2015-12-16": {
+  "o": "breach",
+  "r": [
+   "satisfaction"
+  ],
+  "d": [
+   "compensation"
+  ],
+  "s": "Costa Rica breached its duty to carry out an environmental impact assessment for its road; the declaration is satisfaction, compensation refused."
+ },
+ "151:2013-11-11": {
+  "o": "interpretation",
+  "r": [
+   "restitution"
+  ],
+  "s": "Interpreting 1962: Cambodia has sovereignty over the whole promontory, and Thailand must withdraw its forces from it."
+ },
+ "153:2018-10-01": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Chile never undertook an obligation to negotiate Bolivia's sovereign access to the Pacific."
+ },
+ "154:2023-07-13": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Nicaragua's request for an extended continental shelf boundary beyond 200 miles from Colombia's coasts rejected."
+ },
+ "155:2022-04-21": {
+  "o": "mixed",
+  "r": [
+   "cessation",
+   "performance"
+  ],
+  "s": "Colombia violated Nicaragua's rights in its EEZ and must cease immediately; Colombia must bring its contiguous-zone decree into conformity; Nicaragua's straight baselines are unlawful."
+ },
+ "157:2018-02-02": {
+  "o": "title",
+  "r": [
+   "restitution"
+  ],
+  "s": "Costa Rica has northern Isla Portillos; Nicaragua's military camp there violated its sovereignty and must be removed; maritime boundaries drawn in both seas."
+ },
+ "165:2018-02-02": {
+  "o": "title",
+  "r": [
+   "restitution"
+  ],
+  "s": "Costa Rica has northern Isla Portillos; Nicaragua's military camp there violated its sovereignty and must be removed; maritime boundaries drawn in both seas."
+ },
+ "161:2021-10-12": {
+  "o": "title",
+  "r": [],
+  "d": [
+   "compensation"
+  ],
+  "s": "No agreed boundary; the Court drew the Somalia–Kenya maritime boundary and rejected Somalia's claim that Kenya violated its sovereignty."
+ },
+ "162:2022-12-01": {
+  "o": "dismissed",
+  "r": [],
+  "s": "Most of Chile's and Bolivia's Silala claims had become moot through agreement during the case; the remaining claims rejected."
+ },
+ "163:2020-12-11": {
+  "o": "no-breach",
+  "r": [],
+  "s": "The Avenue Foch building never acquired diplomatic status; France did not breach the Vienna Convention."
+ },
+ "164:2023-03-30": {
+  "o": "breach",
+  "r": [
+   "compensation"
+  ],
+  "s": "The United States violated the 1955 treaty in measures against Iranian companies and owes compensation (to be fixed); claims about Bank Markazi's assets fell outside jurisdiction."
+ },
+ "168:2019-07-17": {
+  "o": "breach",
+  "r": [
+   "performance"
+  ],
+  "d": [
+   "restitution"
+  ],
+  "s": "Pakistan breached consular rights in Jadhav's case; it must inform him, allow access and provide effective review and reconsideration, with a stay of execution. Annulment and release refused."
+ },
+ "173:2020-07-14": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Appeal of the blockading states rejected: the ICAO Council has jurisdiction over Qatar's complaint."
+ },
+ "174:2020-07-14": {
+  "o": "no-breach",
+  "r": [],
+  "s": "Appeal of the blockading states rejected: the ICAO Council has jurisdiction over Qatar's complaint."
+ },
+ "4:1949-04-11": {
+  "o": "advisory",
+  "r": [
+   "compensation"
+  ],
+  "s": "The United Nations can bring an international claim for reparation for injuries to its agents, including against non-members."
+ },
+ "53:1971-06-21": {
+  "o": "advisory",
+  "r": [
+   "cessation",
+   "restitution"
+  ],
+  "s": "South Africa's continued presence in Namibia is illegal and it must withdraw its administration immediately; states must not recognize it."
+ },
+ "100:1999-04-29": {
+  "o": "advisory",
+  "r": [
+   "compensation",
+   "performance"
+  ],
+  "s": "The Special Rapporteur is immune; Malaysia had to inform its courts, and he must be held financially harmless for costs imposed on him."
+ },
+ "131:2004-07-09": {
+  "o": "advisory",
+  "r": [
+   "cessation",
+   "restitution",
+   "compensation"
+  ],
+  "s": "The wall in the occupied territory is contrary to international law; Israel must stop building it, dismantle it, repeal the related measures and make reparation; states must not recognize or assist."
+ },
+ "169:2019-02-25": {
+  "o": "advisory",
+  "r": [
+   "cessation"
+  ],
+  "s": "Mauritius's decolonization was not lawfully completed; the United Kingdom must end its administration of the Chagos Archipelago as rapidly as possible."
+ },
+ "34:1959-03-21": {
+  "o": "dismissed",
+  "s": "Switzerland's claim inadmissible: Interhandel had not exhausted remedies in U.S. courts."
+ },
+ "84:1995-06-30": {
+  "o": "dismissed",
+  "s": "The Court could not rule on Portugal's claim without deciding the lawfulness of the conduct of Indonesia, which was not a party."
+ },
+ "140:2011-04-01": {
+  "o": "dismissed",
+  "s": "No jurisdiction: Georgia had not tried to negotiate under the CERD before going to the Court."
+ },
+ "80:1992-06-26": {
+  "o": "proceeds",
+  "s": "Most of Australia's objections rejected; Nauru's claim for rehabilitation of mined-out phosphate lands could proceed. The case was then settled in 1993 for A$107 million."
+ },
+ "150:2013-07-16": {
+  "pm": "refused",
+  "kinds": [],
+  "s": "Costa Rica's and Nicaragua's requests to modify the 2011 measures rejected; the Court reaffirmed the existing measures."
+ },
+ "180:2022-10-12": {
+  "pm": "refused",
+  "kinds": [],
+  "s": "Armenia's request to modify the 2021 measures rejected; the Court reaffirmed them."
+ }
+}

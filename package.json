@@ -1,0 +1,11 @@
+{
+  "name": "icj-remedies",
+  "private": true,
+  "type": "module",
+  "description": "What the Court Ordered: remedies in every International Court of Justice case.",
+  "scripts": {
+    "data": "node scripts/fetch.mjs && node scripts/build.mjs",
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}

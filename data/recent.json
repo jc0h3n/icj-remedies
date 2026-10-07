@@ -1,0 +1,168 @@
+{
+ "_about": "Decisions issued after the newest CD-ICJ corpus, coded by hand from the ICJ's published summaries and press releases (the operative text is not reproduced). Keys are caseno:date. kind: JUD, ORD (provisional measures) or ADV. pm: indicated / partly / refused for orders. Fields otherwise as in coding.json. Procedural orders (time-limits, suspension, discontinuance, intervention) are listed on the site from data/icj-docs.json but not coded.",
+ "188:2023-11-16": {
+  "kind": "ORD",
+  "pm": "indicated",
+  "kinds": [
+   "protect-people",
+   "stop-conduct",
+   "preserve-evidence"
+  ],
+  "s": "Syria must take all measures within its power to prevent torture and other cruel treatment, ensure its officials do not commit it, and preserve evidence of such acts."
+ },
+ "180:2023-11-17": {
+  "kind": "ORD",
+  "pm": "indicated",
+  "kinds": [
+   "protect-people",
+   "property",
+   "report"
+  ],
+  "s": "Azerbaijan must let people who left Nagorno-Karabakh after 19 September 2023 return safely, protect those who stayed, preserve their identity and property records, and report within eight weeks."
+ },
+ "171:2023-12-01": {
+  "kind": "ORD",
+  "pm": "indicated",
+  "kinds": [
+   "stop-conduct",
+   "territory",
+   "non-aggravation"
+  ],
+  "s": "Venezuela must refrain from any action that would modify the situation in the territory Guyana administers (Essequibo); both parties must not aggravate the dispute."
+ },
+ "192:2024-01-26": {
+  "kind": "ORD",
+  "pm": "indicated",
+  "kinds": [
+   "protect-people",
+   "access-aid",
+   "preserve-evidence",
+   "report"
+  ],
+  "s": "Israel must take all measures within its power to prevent genocidal acts in Gaza, prevent and punish incitement, enable basic services and humanitarian aid, preserve evidence, and report within a month."
+ },
+ "166:2024-01-31": {
+  "kind": "JUD",
+  "o": "breach",
+  "r": [
+   "declaration"
+  ],
+  "d": [
+   "compensation",
+   "non-repetition"
+  ],
+  "s": "Russia violated the terrorism-financing convention by failing to investigate, violated the CERD in Ukrainian-language schooling in Crimea, and breached the 2017 provisional measures; all other submissions, including for compensation, rejected."
+ },
+ "182:2024-02-02": {
+  "kind": "JUD",
+  "o": "proceeds",
+  "s": "Preliminary objections: jurisdiction limited to Ukraine's request for a declaration that it has not committed genocide; claims about Russia's use of force and recognition of the 'republics' dismissed."
+ },
+ "192:2024-03-28": {
+  "kind": "ORD",
+  "pm": "indicated",
+  "kinds": [
+   "access-aid",
+   "protect-people",
+   "report"
+  ],
+  "s": "Additional measures: Israel must ensure, without delay and in full cooperation with the UN, the unhindered provision of food, water, fuel, medical care and other urgently needed aid, including by opening more land crossings."
+ },
+ "193:2024-04-30": {
+  "kind": "ORD",
+  "pm": "refused",
+  "s": "Circumstances not such as to require provisional measures against Germany; Germany's request to remove the case also rejected."
+ },
+ "194:2024-05-23": {
+  "kind": "ORD",
+  "pm": "refused",
+  "s": "No need for provisional measures given Ecuador's binding assurances to respect and protect Mexico's embassy premises, property and archives."
+ },
+ "192:2024-05-24": {
+  "kind": "ORD",
+  "pm": "indicated",
+  "kinds": [
+   "stop-conduct",
+   "access-aid",
+   "preserve-evidence",
+   "report"
+  ],
+  "s": "Israel must immediately halt its military offensive in Rafah that may inflict conditions of life bringing about the group's destruction, keep the Rafah crossing open, and admit UN investigators."
+ },
+ "186:2024-07-19": {
+  "kind": "ADV",
+  "o": "advisory",
+  "r": [
+   "cessation",
+   "restitution",
+   "compensation"
+  ],
+  "s": "Israel's continued presence in the Occupied Palestinian Territory is unlawful; it must end that presence as rapidly as possible, cease new settlement activity, evacuate all settlers and make reparation; states must not recognize or aid it."
+ },
+ "180:2024-11-12": {
+  "kind": "JUD",
+  "o": "proceeds",
+  "s": "All of Azerbaijan's preliminary objections rejected; Armenia's CERD case proceeds."
+ },
+ "181:2024-11-12": {
+  "kind": "JUD",
+  "o": "proceeds",
+  "s": "Armenia's objection upheld for events before 15 September 1996; the rest of Azerbaijan's CERD case proceeds."
+ },
+ "171:2025-05-01": {
+  "kind": "ORD",
+  "pm": "indicated",
+  "kinds": [
+   "stop-conduct",
+   "territory"
+  ],
+  "s": "Venezuela must refrain from holding or preparing elections in the disputed Essequibo territory."
+ },
+ "197:2025-05-05": {
+  "kind": "ORD",
+  "pm": "refused",
+  "s": "Request against the UAE rejected and the case removed from the List: the UAE's reservation to the Genocide Convention's jurisdiction clause meant a manifest lack of jurisdiction."
+ },
+ "179:2025-05-19": {
+  "kind": "JUD",
+  "o": "title",
+  "r": [],
+  "s": "The 1900 Franco-Spanish Convention, not the disputed 1974 Bata Convention, carries legal title; Equatorial Guinea holds sovereignty over Mbanié, Cocotiers and Conga."
+ },
+ "187:2025-07-23": {
+  "kind": "ADV",
+  "o": "advisory",
+  "r": [
+   "cessation",
+   "non-repetition",
+   "restitution",
+   "compensation",
+   "satisfaction"
+  ],
+  "s": "Breaching climate obligations is an internationally wrongful act; its consequences can include cessation, assurances of non-repetition and full reparation (restitution, compensation, satisfaction), subject to causation."
+ },
+ "184:2025-09-12": {
+  "kind": "ORD",
+  "pm": "refused",
+  "s": "Request to stop the sale of 42 avenue Foch rejected: the Convention against Corruption does not plausibly give Equatorial Guinea a right to the building's return."
+ },
+ "196:2025-10-22": {
+  "kind": "ADV",
+  "o": "advisory",
+  "r": [
+   "performance"
+  ],
+  "s": "As occupying power, Israel must meet the basic needs of the population and facilitate relief, including through UNRWA; it may not use starvation as a method of warfare."
+ },
+ "191:2026-05-21": {
+  "kind": "ADV",
+  "o": "advisory",
+  "r": [],
+  "s": "Convention No. 87 protects the right to strike (10 votes to 4); the Court did not define its scope."
+ },
+ "185:2026-03-19": {
+  "kind": "JUD",
+  "o": "intervention",
+  "s": "Guatemala permitted to intervene as a non-party on sovereignty over the Sapodilla Cayes and fishing rights around them."
+ }
+}
