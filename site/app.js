@@ -140,11 +140,11 @@ function overview() {
   const owedCases = [...new Set(binding.filter(d => granted(d).includes("compensation")).map(d => d.c))];
   const fixedCases = owedCases.filter(c => c.decisions.some(d => d.amt?.length));
   const neverCases = owedCases.filter(c => !fixedCases.includes(c));
-  const caseItem = (label, list) => ({ label, value: list.length, cases: list.map(c => ({ c, date: c.decisions.find(d => d.amt?.length || (d.r || []).includes("compensation")).date })) });
+  const caseItem = (label, list) => ({ label, value: list.length, unit: "case", cases: list.map(c => { const d = c.decisions.find(x => x.amt?.length) || c.decisions.find(x => (x.r || []).includes("compensation")); return { c, date: d.date, note: d.amt?.length ? d.amt.map(money).join(", ") : "" }; }) });
   hbars(document.getElementById("c-rem"), CATS.flatMap(([k, l]) => k === "compensation"
       ? [caseItem("Compensation: amount fixed (cases)", fixedCases), caseItem("Compensation: owed, amount never fixed by the Court (cases)", neverCases)]
       : [{ label: l, value: binding.filter(d => granted(d).includes(k)).length, cases: binding.filter(d => granted(d).includes(k)) }]),
-    { format: fmtInt, tipText: i => `<b>${esc(i.label)}</b><br>${i.value} decision${i.value === 1 ? "" : "s"}${i.value && i.value <= 12 ? "<br>" + i.cases.map(d => `${esc(shortName(d.c))} (${year(d)})`).join("<br>") : ""}` });
+    { format: fmtInt, tipText: i => `<b>${esc(i.label)}</b><br>${i.value} ${i.unit || "decision"}${i.value === 1 ? "" : "s"}${i.value && i.value <= 12 ? "<br>" + i.cases.map(d => `${esc(shortName(d.c))} (${year(d)}${d.note ? ": " + esc(d.note) : ""})`).join("<br>") : ""}` });
 
   hbars(document.getElementById("c-refused"), CATS.map(([k, l]) => ({ label: l, value: binding.filter(d => refused(d).includes(k)).length, cases: binding.filter(d => refused(d).includes(k)) })),
     { format: fmtInt, tipText: i => `<b>${esc(i.label)}</b> refused in ${i.value} decision${i.value === 1 ? "" : "s"}${i.value <= 12 ? "<br>" + i.cases.map(d => `${esc(shortName(d.c))} (${year(d)})`).join("<br>") : ""}` });
