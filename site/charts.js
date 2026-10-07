@@ -116,9 +116,9 @@ export function lines(el, series, { yFormat = fmtPct, xLabel = x => x, marker, y
 
 // ---- Dot plot (scatter or 1-D strip) ------------------------------------------------------------
 // points: [{x, y, color, tip}] ; if opts.strip, y is ignored and points are jittered per row key
-export function dots(el, points, { xDomain = [-1, 1], yDomain = [-1, 1], xTitle = "", yTitle = "", strip = false, rows = [], height = 360 } = {}) {
+export function dots(el, points, { xDomain = [-1, 1], yDomain = [-1, 1], xTitle = "", yTitle = "", strip = false, rows = [], height = 360, labelWidth = 96 } = {}) {
   const W = Math.max(el.clientWidth, 280), H = strip ? Math.max(rows.length * 70 + 40, 120) : height;
-  const L = strip ? 96 : 44, R = 12, T = 10, B = 34;
+  const L = strip ? labelWidth : 44, R = 12, T = 10, B = 34;
   const sx = x => L + (W - L - R) * (x - xDomain[0]) / (xDomain[1] - xDomain[0]);
   const sy = y => T + (H - T - B) * (1 - (y - yDomain[0]) / (yDomain[1] - yDomain[0]));
   const xt = niceTicks(xDomain[0], xDomain[1], 4).filter(t => t >= xDomain[0] && t <= xDomain[1]);

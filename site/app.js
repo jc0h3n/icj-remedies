@@ -110,7 +110,7 @@ function overview() {
     </div>
     <div class="grid2">
       ${chart("c-time", "Every judgment on the merits, by outcome", "One dot per judgment (merits, compensation, interpretation). Hover for the case and what was decided.", true)}
-      ${chart("c-rem", "Remedies the Court granted", "Number of decisions granting each remedy. Provisional measures count orders; declaratory judgments include rulings on title and boundaries. A judgment can grant more than one.")}
+      ${chart("c-rem", "Remedies the Court granted", "Number of decisions granting each remedy (compensation is counted by case). Provisional measures count orders; declaratory judgments include rulings on title and boundaries. A judgment can grant more than one.")}
       ${chart("c-refused", "Remedies asked for and refused", "Number of decisions in which the Court rejected a request for each remedy, including requests for provisional measures.")}
       ${chart("c-decade", "Outcomes by decade", "Merits, compensation and interpretation judgments.")}
       ${chart("c-region", "Which states were found in breach, by region", "Merits judgments finding a breach, by the region of the respondent. Counter-claims and joined cases make this approximate.")}
@@ -130,11 +130,20 @@ function overview() {
   dots(el, m.map(d => ({
     x: year(d) + (+d.date.slice(5, 7) - 1) / 12, row: d.o, color: css(OUT[d.o]?.color || "--c0"),
     tip: `<b>${esc(shortName(d.c))}</b><br><span class="muted">${esc(parties(d.c))} · ${fmtDate(d.date)}</span><br>${esc(d.s || "")}`,
-  })), { strip: true, rows: rows.map(r => ({ ...r, label: r.label.length > 18 ? r.label.split(" ").slice(0, 2).join(" ") + "…" : r.label })), xDomain: span(), xTitle: "" });
+  })), { strip: true, rows: rows.map(r => ({ ...r, label: shortRow(r.key) })), labelWidth: 150, xDomain: span(), xTitle: "" });
   el.querySelectorAll("text.rowlab").forEach((t, i) => t.textContent = shortRow(rows[i].key));
+  el.insertAdjacentHTML("afterend", `<dl class="rowkey">${rows.map(r => `<div><dt>${esc(shortRow(r.key))}</dt><dd>${esc(ROW_HELP[r.key] || "")}</dd></div>`).join("")}</dl>`);
 
   const binding = decisions.filter(d => d.stage !== "AO");
-  hbars(document.getElementById("c-rem"), CATS.map(([k, l]) => ({ label: l, value: binding.filter(d => granted(d).includes(k)).length, cases: binding.filter(d => granted(d).includes(k)) })),
+  // Compensation is counted by case and split in two: cases where the Court set an amount, and cases where it said
+  // compensation was owed but the amount was never fixed by the Court.
+  const owedCases = [...new Set(binding.filter(d => granted(d).includes("compensation")).map(d => d.c))];
+  const fixedCases = owedCases.filter(c => c.decisions.some(d => d.amt?.length));
+  const neverCases = owedCases.filter(c => !fixedCases.includes(c));
+  const caseItem = (label, list) => ({ label, value: list.length, cases: list.map(c => ({ c, date: c.decisions.find(d => d.amt?.length || (d.r || []).includes("compensation")).date })) });
+  hbars(document.getElementById("c-rem"), CATS.flatMap(([k, l]) => k === "compensation"
+      ? [caseItem("Compensation: amount fixed (cases)", fixedCases), caseItem("Compensation: owed, amount never fixed by the Court (cases)", neverCases)]
+      : [{ label: l, value: binding.filter(d => granted(d).includes(k)).length, cases: binding.filter(d => granted(d).includes(k)) }]),
     { format: fmtInt, tipText: i => `<b>${esc(i.label)}</b><br>${i.value} decision${i.value === 1 ? "" : "s"}${i.value && i.value <= 12 ? "<br>" + i.cases.map(d => `${esc(shortName(d.c))} (${year(d)})`).join("<br>") : ""}` });
 
   hbars(document.getElementById("c-refused"), CATS.map(([k, l]) => ({ label: l, value: binding.filter(d => refused(d).includes(k)).length, cases: binding.filter(d => refused(d).includes(k)) })),
@@ -151,7 +160,18 @@ function overview() {
   for (const d of found) for (const p of d.c.parties?.r || []) byRegion[p[2] || "Other"] = (byRegion[p[2] || "Other"] || 0) + 1;
   hbars(document.getElementById("c-region"), Object.entries(byRegion).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ label: k, value: v })), { format: fmtInt });
 }
-const shortRow = k => ({ breach: "Breach", mixed: "Both sides", title: "Boundary", "no-breach": "Rejected", compensation: "Money", declaratory: "Declared", dismissed: "No merits", interpretation: "Interpret." }[k] || k);
+const shortRow = k => ({ breach: "Breach found", mixed: "Breaches both sides", title: "Territory or boundary", "no-breach": "Claims rejected", compensation: "Compensation set", declaratory: "Rights declared", dismissed: "No merits ruling", interpretation: "Interpretation" }[k] || k);
+// What each timeline row means, shown under the chart
+const ROW_HELP = {
+  breach: "The Court found the respondent (or, on a counter-claim, the applicant) broke international law.",
+  mixed: "Both parties were found to have broken international law.",
+  title: "The Court decided who holds sovereignty over territory, or drew a land or maritime boundary.",
+  "no-breach": "The Court ruled on the merits and rejected the claims.",
+  compensation: "A later judgment fixing the amount of compensation owed.",
+  declaratory: "The Court declared the parties' rights (for example, how a treaty applies) without finding a breach.",
+  dismissed: "The case ended without a ruling on the merits: no jurisdiction, inadmissible, or the claim became moot.",
+  interpretation: "A request to interpret or revise an earlier judgment.",
+};
 
 // ---------------------------------------------------------------- Provisional measures
 function interim() {

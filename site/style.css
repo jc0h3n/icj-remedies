@@ -143,3 +143,6 @@ footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--grid);
 nav.tabs { font-size: 0.95em; }
 
 .courts { font-size: 0.95em; margin: -12px 0 22px; padding: 8px 0; border-block: 1px solid var(--grid); }
+.rowkey { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 20px; margin: 10px 0 0; font-size: 0.82em; }
+.rowkey dt { font-weight: 600; color: var(--ink); }
+.rowkey dd { margin: 0; color: var(--ink-2); }
