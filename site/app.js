@@ -17,17 +17,31 @@ const OUTCOMES = [
   ["interpretation", "Interpretation or revision", "--c0"],
 ];
 const OUT = Object.fromEntries(OUTCOMES.map(([k, l, c]) => [k, { label: l, color: c }]));
-const REMEDIES = [
-  ["declaration", "Declaration of breach only"],
-  ["satisfaction", "Declaration as satisfaction"],
-  ["cessation", "Cessation"],
-  ["restitution", "Restitution or withdrawal"],
+// The seven remedy categories, in the order the site shows them. Coded remedies map onto them: a duty to negotiate is
+// specific performance; withdrawal from territory is restitution in kind; rulings on title or boundaries are declaratory.
+const CATS = [
+  ["pm", "Provisional measures"],
+  ["declaratory", "Declaratory judgment"],
   ["performance", "Specific performance"],
-  ["compensation", "Compensation or reparation"],
-  ["non-repetition", "Assurances of non-repetition"],
-  ["negotiate", "Duty to negotiate"],
+  ["cessation", "Cessation, assurances and guarantees of non-repetition"],
+  ["restitution", "Restitution in kind"],
+  ["compensation", "Compensation"],
+  ["satisfaction", "Satisfaction"],
 ];
-const REM = Object.fromEntries(REMEDIES);
+const CAT = Object.fromEntries(CATS);
+const CAT_OF = { declaration: "declaratory", performance: "performance", negotiate: "performance", cessation: "cessation", "non-repetition": "cessation", restitution: "restitution", compensation: "compensation", satisfaction: "satisfaction" };
+const granted = d => {
+  const out = new Set((d.r || []).map(k => CAT_OF[k]).filter(Boolean));
+  if (d.stage === "PM" && d.pm !== "refused") out.add("pm");
+  if (d.stage !== "AO" && (d.o === "title" || d.o === "declaratory")) out.add("declaratory");
+  return CATS.map(c => c[0]).filter(k => out.has(k));
+};
+const refused = d => {
+  const out = new Set((d.d || []).map(k => CAT_OF[k]).filter(Boolean));
+  if (d.stage === "PM" && d.pm === "refused") out.add("pm");
+  return CATS.map(c => c[0]).filter(k => out.has(k));
+};
+const COURTS = { icj: ["ICJ", "International Court of Justice", "since 1946"], pcij: ["PCIJ", "Permanent Court of International Justice", "1922–1946"], all: ["Both", "both courts", "since 1922"] };
 const PM = { indicated: ["Measures indicated", "--c1"], partly: ["Some measures indicated", "--c3"], refused: ["Refused", "--c4"] };
 const KINDS = {
   "non-aggravation": "Do not aggravate the dispute", "stop-conduct": "Stop or refrain from conduct", "protect-people": "Protect people (life, liberty, execution, genocide)",
@@ -36,13 +50,11 @@ const KINDS = {
 };
 const STAGE = { ME: "Merits", CO: "Compensation", RI: "Interpretation or revision", PO: "Preliminary objections", PM: "Provisional measures", AO: "Advisory opinion", IV: "Intervention" };
 
-let D, cases, decisions;
+let D, cases, decisions, court = "icj";
 const view = document.getElementById("view");
 
 async function main() {
   D = await (await fetch("data/icj.json")).json();
-  cases = D.cases;
-  decisions = cases.flatMap(c => c.decisions.map(d => ({ ...d, c })));
   document.getElementById("generated").textContent = ` Built ${D.built}.`;
   addEventListener("hashchange", render);
   addEventListener("resize", debounce(() => current !== "cases" && render(), 250));
@@ -53,8 +65,13 @@ let current;
 function render() {
   const h = new URLSearchParams(location.hash.slice(1));
   current = TABS.some(t => t[0] === h.get("tab")) ? h.get("tab") : "overview";
+  court = COURTS[h.get("court")] ? h.get("court") : "icj";
+  cases = D.cases.filter(c => court === "all" || c.court === COURTS[court][0]);
+  decisions = cases.flatMap(c => c.decisions.map(d => ({ ...d, c })));
   document.getElementById("tabs").innerHTML = TABS.map(([k, l], i) =>
-    `${i ? `<span class="muted"> / </span>` : ""}<a href="#tab=${k}"${k === current ? ` class="on" aria-current="page"` : ""}>${l}</a>`).join("");
+    `${i ? `<span class="muted"> / </span>` : ""}<a href="#tab=${k}&court=${court}"${k === current ? ` class="on" aria-current="page"` : ""}>${l}</a>`).join("");
+  document.getElementById("courts").innerHTML = `<span class="muted">Court:</span> ` + Object.entries(COURTS).map(([k, [short, long]]) =>
+    `<a href="#tab=${current}&court=${k}"${k === court ? ` class="on" aria-current="true"` : ""} title="${esc(k === "all" ? "Both courts together" : long)}">${k === "all" ? "Both" : esc(long)}</a>`).join(`<span class="muted"> / </span>`);
   ({ overview, interim, advisory, cases: caseList, about })[current](h);
 }
 
@@ -64,24 +81,26 @@ const shortName = c => caseLabel(c).replace(/\s*\((?:[^()]|\([^()]*\))*\)\s*$/, 
 const parties = c => (caseLabel(c).match(/\(((?:[^()]|\([^()]*\))*)\)\s*$/) || [])[1] || "";
 const year = d => +d.date.slice(0, 4);
 const fmtDate = s => new Date(s + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
-const money = ([cur, v]) => (cur === "GBP" ? "£" : "US$") + v.toLocaleString("en-US", { maximumFractionDigits: 2 });
+const money = ([cur, v]) => cur === "FRF" ? v.toLocaleString("en-US", { maximumFractionDigits: 2 }) + " French francs" : (cur === "GBP" ? "£" : "US$") + v.toLocaleString("en-US", { maximumFractionDigits: 2 });
 const tile = (label, value, sub = "") => `<div class="tile"><div class="label">${label}</div><div class="value">${value}</div><div class="sub">${sub}</div></div>`;
 const chart = (id, title, note = "", wide = false) => `<section class="chart${wide ? " wide" : ""}"><h2>${title}</h2>${note ? `<p class="note">${note}</p>` : ""}<div class="body" id="${id}"></div></section>`;
-const caseLink = c => `<a href="#tab=cases&case=${c.no}">${esc(shortName(c))}</a>`;
+const caseLink = c => `<a href="#tab=cases&court=${court}&case=${c.no}">${esc(shortName(c))}</a>`;
+const courtName = () => court === "all" ? "The two courts have" : court === "pcij" ? "The Permanent Court of International Justice" : "The International Court of Justice has";
+const span = () => court === "pcij" ? [1920, 1942] : court === "icj" ? [1945, 2030] : [1920, 2030];
 
 // ---------------------------------------------------------------- Remedies
 function overview() {
   const m = merits();
   const judged = m.filter(d => d.stage === "ME");
   const found = judged.filter(d => d.o === "breach" || d.o === "mixed");
-  const comp = m.filter(d => d.o === "compensation");
+  const comp = m.filter(d => d.amt?.length);   // every judgment that put a figure on compensation
   const contentious = cases.filter(c => c.kind === "contentious");
   const reachedMerits = new Set(judged.filter(d => d.o !== "dismissed").map(d => d.c.no));
   const pm = decisions.filter(d => d.stage === "PM");
   const withRemedy = found.filter(d => d.r?.some(r => r !== "declaration" && r !== "satisfaction"));
 
   view.innerHTML = `
-    <p class="summary">The Court has heard ${contentious.length} contentious cases since 1946. ${reachedMerits.size} reached a judgment on the merits, and in ${found.length} judgments it found that a state had broken international law. It went beyond saying so, ordering the state to stop, undo, perform or pay, in ${withRemedy.length}. It has fixed an amount of money only ${comp.length} times.</p>
+    <p class="summary">${courtName()} heard ${contentious.length} contentious cases ${court === "pcij" ? "between 1922 and 1940" : COURTS[court][2]}. ${reachedMerits.size} reached a judgment on the merits, and in ${found.length} judgments it found that a state had broken international law. It went beyond saying so, ordering the state to stop, undo, perform or pay, in ${withRemedy.length}. ${comp.length ? `It fixed an amount of money ${comp.length === 1 ? "only once" : `only ${comp.length} times`}.` : "It never fixed an amount of money."}</p>
     <div class="tiles">
       ${tile("Contentious cases", contentious.length, `${cases.length - contentious.length} advisory proceedings besides`)}
       ${tile("Merits judgments", judged.length, `in ${reachedMerits.size} cases`)}
@@ -91,13 +110,13 @@ function overview() {
     </div>
     <div class="grid2">
       ${chart("c-time", "Every judgment on the merits, by outcome", "One dot per judgment (merits, compensation, interpretation). Hover for the case and what was decided.", true)}
-      ${chart("c-rem", "What the Court ordered when it found a breach", `Share of the ${found.length} judgments finding a breach that included each remedy. Most included more than one.`)}
-      ${chart("c-refused", "What it was asked for and refused", "Number of merits and compensation judgments in which the Court rejected a request for each remedy.")}
+      ${chart("c-rem", "Remedies the Court granted", "Number of decisions granting each remedy. Provisional measures count orders; declaratory judgments include rulings on title and boundaries. A judgment can grant more than one.")}
+      ${chart("c-refused", "Remedies asked for and refused", "Number of decisions in which the Court rejected a request for each remedy, including requests for provisional measures.")}
       ${chart("c-decade", "Outcomes by decade", "Merits, compensation and interpretation judgments.")}
       ${chart("c-region", "Which states were found in breach, by region", "Merits judgments finding a breach, by the region of the respondent. Counter-claims and joined cases make this approximate.")}
     </div>
     <h2 class="section-title">Money the Court has awarded</h2>
-    <p class="caveat">In eight decades the Court has put a figure on compensation four times. In other cases it held that reparation was owed but left the amount to the parties, and the question was settled, abandoned or is still open.</p>
+    <p class="caveat">${comp.length === 1 ? "Only once" : `Only ${comp.length} times`} has ${court === "all" ? "either court" : "the Court"} put a figure on compensation. In other cases it held that reparation was owed but left the amount to the parties, and the question was settled, abandoned or is still open.</p>
     <div class="table-wrap"><table>
       <thead><tr><th>Case</th><th>Judgment</th><th class="num">Amount</th><th>For</th></tr></thead>
       <tbody>${comp.map(d => `<tr><td>${caseLink(d.c)}<div class="muted">${esc(parties(d.c))}</div></td><td>${fmtDate(d.date)}</td><td class="num money">${d.amt.map(money).join("<br>")}</td><td>${esc(d.s)}</td></tr>`).join("")}</tbody>
@@ -111,16 +130,15 @@ function overview() {
   dots(el, m.map(d => ({
     x: year(d) + (+d.date.slice(5, 7) - 1) / 12, row: d.o, color: css(OUT[d.o]?.color || "--c0"),
     tip: `<b>${esc(shortName(d.c))}</b><br><span class="muted">${esc(parties(d.c))} · ${fmtDate(d.date)}</span><br>${esc(d.s || "")}`,
-  })), { strip: true, rows: rows.map(r => ({ ...r, label: r.label.length > 18 ? r.label.split(" ").slice(0, 2).join(" ") + "…" : r.label })), xDomain: [1945, 2030], xTitle: "" });
+  })), { strip: true, rows: rows.map(r => ({ ...r, label: r.label.length > 18 ? r.label.split(" ").slice(0, 2).join(" ") + "…" : r.label })), xDomain: span(), xTitle: "" });
   el.querySelectorAll("text.rowlab").forEach((t, i) => t.textContent = shortRow(rows[i].key));
 
-  hbars(document.getElementById("c-rem"), REMEDIES.map(([k, l]) => ({ label: l, value: found.filter(d => d.r?.includes(k)).length / found.length }))
-    .filter(i => i.value).sort((a, b) => b.value - a.value),
-    { tipText: i => `<b>${esc(i.label)}</b><br>${Math.round(i.value * found.length)} of ${found.length} judgments finding a breach` });
+  const binding = decisions.filter(d => d.stage !== "AO");
+  hbars(document.getElementById("c-rem"), CATS.map(([k, l]) => ({ label: l, value: binding.filter(d => granted(d).includes(k)).length, cases: binding.filter(d => granted(d).includes(k)) })),
+    { format: fmtInt, tipText: i => `<b>${esc(i.label)}</b><br>${i.value} decision${i.value === 1 ? "" : "s"}${i.value && i.value <= 12 ? "<br>" + i.cases.map(d => `${esc(shortName(d.c))} (${year(d)})`).join("<br>") : ""}` });
 
-  hbars(document.getElementById("c-refused"), REMEDIES.map(([k, l]) => ({ label: l, value: m.filter(d => d.d?.includes(k)).length, cases: m.filter(d => d.d?.includes(k)) }))
-    .filter(i => i.value).sort((a, b) => b.value - a.value),
-    { format: fmtInt, tipText: i => `<b>${esc(i.label)}</b> refused in:<br>${i.cases.map(d => `${esc(shortName(d.c))} (${year(d)})`).join("<br>")}` });
+  hbars(document.getElementById("c-refused"), CATS.map(([k, l]) => ({ label: l, value: binding.filter(d => refused(d).includes(k)).length, cases: binding.filter(d => refused(d).includes(k)) })),
+    { format: fmtInt, tipText: i => `<b>${esc(i.label)}</b> refused in ${i.value} decision${i.value === 1 ? "" : "s"}${i.value <= 12 ? "<br>" + i.cases.map(d => `${esc(shortName(d.c))} (${year(d)})`).join("<br>") : ""}` });
 
   const decades = [...new Set(m.map(d => Math.floor(year(d) / 10) * 10))].sort();
   stackedHbars(document.getElementById("c-decade"), decades.map(dec => ({
@@ -141,7 +159,7 @@ function interim() {
   const granted = pm.filter(d => d.pm !== "refused");
   const decades = [...new Set(pm.map(d => Math.floor(year(d) / 10) * 10))].sort();
   view.innerHTML = `
-    <p class="summary">While a case is pending, a state can ask the Court to order interim measures to protect its rights. Since 1951 the Court has ruled on ${pm.length} such requests and ordered measures in ${granted.length}. Requests have multiplied: ${pm.filter(d => year(d) >= 2010).length} of them came after 2010.</p>
+    <p class="summary">While a case is pending, a state can ask the Court to order interim measures to protect its rights. Since ${pm.length ? Math.min(...pm.map(year)) : ""} ${court === "all" ? "the two courts have" : "the Court has"} ruled on ${pm.length} such requests and ordered measures in ${granted.length}. Requests have multiplied: ${pm.filter(d => year(d) >= 2010).length} of them came after 2010.</p>
     <div class="tiles">
       ${tile("Requests decided", pm.length)}
       ${tile("Measures ordered", granted.length, fmtPct(granted.length / pm.length))}
@@ -176,7 +194,7 @@ function advisory() {
   view.innerHTML = `
     <p class="summary">Advisory opinions answer questions from UN organs and agencies and bind no one. But some spell out remedies all the same: the Court has told states to withdraw, to stop building, to end an administration or to make reparation in ${rem.length} of its ${ao.length} opinions.</p>
     <div class="table-wrap"><table><thead><tr><th>Date</th><th>Opinion</th><th>Consequences stated</th><th>In brief</th></tr></thead><tbody>
-    ${ao.map(d => `<tr><td style="white-space:nowrap">${d.date}</td><td>${caseLink(d.c)}</td><td>${(d.r || []).map(r => `<span class="pill">${esc(REM[r])}</span>`).join("") || `<span class="muted">—</span>`}</td><td>${esc(d.s || firstAnswer(d))}</td></tr>`).join("")}
+    ${ao.map(d => `<tr><td style="white-space:nowrap">${d.date}</td><td>${caseLink(d.c)}</td><td>${[...new Set((d.r || []).map(r => CAT_OF[r]).filter(Boolean))].map(k => `<span class="pill">${esc(CAT[k])}</span>`).join("") || `<span class="muted">—</span>`}</td><td>${esc(d.s || firstAnswer(d))}</td></tr>`).join("")}
     </tbody></table></div>`;
 }
 function firstAnswer(d) {
@@ -188,17 +206,17 @@ function firstAnswer(d) {
 // ---------------------------------------------------------------- Every case
 function caseList(h) {
   const q = (h.get("q") || "").toLowerCase();
-  const open = +h.get("case") || null;
-  const list = cases.slice().sort((a, b) => b.no - a.no).filter(c => !q || `${c.name} ${c.no}`.toLowerCase().includes(q));
+  const open = h.get("case");
+  const list = cases.slice().sort((a, b) => (b.year || 0) - (a.year || 0) || String(b.no).localeCompare(String(a.no), "en", { numeric: true })).filter(c => !q || `${c.name} ${c.no}`.toLowerCase().includes(q));
   view.innerHTML = `
     <div class="table-tools"><input type="search" id="q" placeholder="Search cases or states" value="${esc(h.get("q") || "")}" aria-label="Search cases">
       <span class="muted">${list.length} of ${cases.length} cases · dots show each decision's outcome</span></div>
     ${legend([...OUTCOMES.filter(o => o[2] !== "--c0").map(([, l, c]) => ({ label: l, color: css(c) })), { label: "Measures ordered", color: css("--c1") }, { label: "Other", color: css("--c0") }])}
-    <div id="list">${list.map(c => caseHtml(c, c.no === open)).join("")}</div>
+    <div id="list">${list.map(c => caseHtml(c, String(c.no) === open)).join("")}</div>
     ${D.pending.length ? `<h2 class="section-title">Decisions not yet coded</h2><ul class="sources">${D.pending.map(p => `<li>${p.date}: case ${p.no}, ${esc(p.title)} ${esc(p.subtitle)} <a href="${p.url}">PDF</a></li>`).join("")}</ul>` : ""}`;
   const input = document.getElementById("q");
   input.addEventListener("input", debounce(() => {
-    const p = new URLSearchParams({ tab: "cases" }); if (input.value) p.set("q", input.value);
+    const p = new URLSearchParams({ tab: "cases", court }); if (input.value) p.set("q", input.value);
     history.replaceState(null, "", "#" + p); caseList(p); const i = document.getElementById("q"); i.focus(); i.setSelectionRange(i.value.length, i.value.length);
   }, 200));
   if (open) document.querySelector(`details[data-no="${open}"]`)?.scrollIntoView({ block: "start" });
@@ -212,23 +230,23 @@ function caseHtml(c, open) {
   const ds = c.decisions;
   const years = c.introduced ? `${c.introduced}–${c.concluded || "pending"}` : ds.length ? `${ds[0].date.slice(0, 4)}–${c.pending ? "pending" : ds.at(-1).date.slice(0, 4)}` : "";
   return `<details class="case" data-no="${c.no}"${open ? " open" : ""}>
-    <summary><span class="no">${c.no}</span><span class="cname">${esc(caseLabel(c))}</span>
+    <summary><span class="no">${c.court === "PCIJ" ? `<span title="PCIJ series ${esc(c.refs.join(", "))}">PCIJ</span>` : c.no}</span><span class="cname">${esc(caseLabel(c))}</span>
       <span class="meta"><span class="dots-row">${ds.map(d => `<i style="background:${dotColor(d)}" title="${esc(STAGE[d.stage] + ", " + d.date)}"></i>`).join("")}</span> ${years}${c.kind === "advisory" ? " · advisory" : ""}</span></summary>
     ${ds.length ? ds.map(decisionHtml).join("") : `<p class="decision muted">No judgment, opinion or provisional measures order: the case was withdrawn, settled or is still at the written stage.</p>`}
   </details>`;
 }
 function decisionHtml(d) {
   const tags = [
-    ...(d.r || []).map(r => `<span class="pill">${esc(REM[r] || r)}</span>`),
-    ...(d.d || []).map(r => `<span class="pill no" title="Asked for and refused">${esc(REM[r] || r)}</span>`),
+    ...granted(d).filter(k => k !== "pm").map(k => `<span class="pill">${esc(CAT[k])}</span>`),
+    ...refused(d).filter(k => k !== "pm").map(k => `<span class="pill no" title="Asked for and refused">${esc(CAT[k])}</span>`),
     ...(d.amt || []).map(a => `<span class="pill">${money(a)}</span>`),
   ].join("");
   const label = d.stage === "PM" ? PM[d.pm][0] : d.stage === "PO" ? (d.o === "dismissed" ? "Case ended here" : "Case proceeds") : OUT[d.o]?.label || "";
   return `<div class="decision">
-    <h3><span>${STAGE[d.stage]}, ${fmtDate(d.date)}</span><span class="muted"><i class="key" style="background:${dotColor(d)}"></i>${esc(label)}</span>${d.url ? `<a href="${d.url}">ICJ</a>` : ""}</h3>
+    <h3><span>${STAGE[d.stage]}, ${fmtDate(d.date)}</span><span class="muted"><i class="key" style="background:${dotColor(d)}"></i>${esc(label)}</span>${d.url ? `<a href="${d.url}" target="_blank" rel="noopener">${d.series ? `PCIJ ${esc(d.series)}` : "ICJ"}</a>` : ""}</h3>
     ${d.s ? `<p class="sum">${esc(d.s)}</p>` : ""}${tags ? `<div>${tags}</div>` : ""}
     ${d.points?.length ? `<details><summary class="muted" style="cursor:pointer;font-size:0.85em">Operative part (${d.points.length} points)</summary><ul class="points">${d.points.map(p => `<li>${p.l ? `<span class="lab">(${esc(p.l)})</span>` : ""}${esc(p.t.replace(/^(?:By\s+\w+\s+votes?\s+to\s+\w+,?|Unanimously,?)\s*/i, ""))} <span class="vote">${p.v === "u" ? "unanimous" : p.v ? `${p.v[0]}–${p.v[1]}` : ""}</span></li>`).join("")}</ul></details>` : ""}
-    ${d.src === "hand" ? `<p class="muted" style="font-size:0.8em">Coded from the ICJ's summary; operative text not yet in the corpus.</p>` : ""}
+    ${d.src === "hand" ? `<p class="muted" style="font-size:0.8em">${d.series ? "Coded by hand from the Permanent Court's published decision (linked above)." : "Coded from the ICJ's summary; operative text not yet in the corpus."}</p>` : ""}
   </div>`;
 }
 
@@ -236,7 +254,7 @@ function decisionHtml(d) {
 function about() {
   view.innerHTML = `<div style="max-width:78ch">
     <h2 class="section-title">What this shows</h2>
-    <p>Every case on the International Court of Justice's lists, and for each decision what the Court did: whether it found a breach, decided a boundary, rejected the claims or never reached the merits, and which remedies it ordered or refused. Remedies follow the categories of the law of state responsibility: cessation, restitution, compensation, satisfaction (often a declaration that a breach occurred) and assurances of non-repetition, plus orders to perform a specific act and to negotiate.</p>
+    <p>Every case on the lists of the International Court of Justice (since 1946) and of its predecessor, the Permanent Court of International Justice (1922–1946), shown separately or together with the court switch above. For each decision what the Court did: whether it found a breach, decided a boundary, rejected the claims or never reached the merits, and which remedies it ordered or refused. Remedies are grouped into seven categories: provisional measures; declaratory judgments (declaring a breach, a right, or title to territory); specific performance (including a duty to negotiate); cessation, assurances and guarantees of non-repetition; restitution in kind (including withdrawal from territory); compensation; and satisfaction.</p>
     <h2 class="section-title">How it was built</h2>
     <ul class="sources">
       <li><b>Text.</b> The operative part of every judgment, order and opinion to ${esc(D.corpus.cutoff)} comes from the Corpus of Decisions: International Court of Justice by Seán Fobbe (version ${esc(D.corpus.version)}, <a href="https://doi.org/${esc(D.corpus.doi)}">doi:${esc(D.corpus.doi)}</a>, CC0). A script finds each operative part ("For these reasons, THE COURT,…") and splits it into numbered points and votes.</li>

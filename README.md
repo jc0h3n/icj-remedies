@@ -1,9 +1,9 @@
 # What the Court Ordered
 
-Remedies at the International Court of Justice. For every case since 1946 the site shows:
+Remedies at the World Court: the International Court of Justice (since 1946) and the Permanent Court of International Justice (1922–1946), shown separately or together. For every case the site shows:
 
 - what the Court found: a breach, a boundary decided, claims rejected, or no decision on the merits;
-- what it ordered or declared: cessation, restitution or withdrawal, specific performance, compensation, satisfaction, assurances of non-repetition, a duty to negotiate;
+- the remedies it granted, in seven categories: provisional measures; declaratory judgments; specific performance (including a duty to negotiate); cessation, assurances and guarantees of non-repetition; restitution in kind (including withdrawal from territory); compensation; satisfaction;
 - what remedies it was asked for and refused;
 - every provisional measures order and what it required;
 - the remedial consequences stated in advisory opinions.
@@ -15,6 +15,8 @@ Remedies at the International Court of Justice. For every case since 1946 the si
 | [Corpus of Decisions: International Court of Justice](https://doi.org/10.5281/zenodo.3826444) (Seán Fobbe) | Text of every decision up to the newest corpus version (currently October 2023); the operative part is extracted and split into points and votes | CC0 |
 | [CD-ICJ source data](https://codeberg.org/seanfobbe/cd-icj) | Party names and UN regions | GPL-3.0 (code repository) |
 | [International Court of Justice](https://www.icj-cij.org/list-of-all-cases) | Case list, pending cases, and decisions newer than the corpus (titles, dates, links) | Public |
+| [PCIJ Series A, B and A/B](https://www.icj-cij.org/pcij) | Every Permanent Court judgment, order and advisory opinion, linked from the site | Public |
+| `data/pcij.json` | Hand coding of the Permanent Court's 30 contentious cases and 27 advisory opinions | This repository |
 | `data/coding.json`, `data/recent.json` | Hand coding of outcomes and remedies, with one-line summaries | This repository |
 
 How the coding works:

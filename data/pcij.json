@@ -1,0 +1,1134 @@
+{
+ "_about": "Permanent Court of International Justice (1922–1946), coded by hand from its published decisions (Series A, B and A/B on icj-cij.org). Each case groups the series entries that belong to it. Decision fields as in coding.json; refs are the PCIJ series numbers whose documents are linked. Advisory opinions carry a neutral description of the question unless the answer is well established.",
+ "cases": [
+  {
+   "no": "P01",
+   "name": "S.S. \"Wimbledon\" (United Kingdom, France, Italy and Japan v. Germany; Poland intervening)",
+   "kind": "contentious",
+   "refs": [
+    "A01"
+   ],
+   "decisions": [
+    {
+     "date": "1923-06-28",
+     "type": "JUD",
+     "stage": "IV",
+     "o": "intervention",
+     "s": "Poland permitted to intervene."
+    },
+    {
+     "date": "1923-08-17",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "breach",
+     "r": [
+      "compensation"
+     ],
+     "amt": [
+      [
+       "FRF",
+       140749.35
+      ]
+     ],
+     "s": "Germany wrongly refused the Wimbledon passage through the Kiel Canal and must pay France 140,749.35 francs with interest at 6% from the judgment."
+    }
+   ]
+  },
+  {
+   "no": "P02",
+   "name": "Mavrommatis Palestine Concessions (Greece v. United Kingdom)",
+   "kind": "contentious",
+   "refs": [
+    "A02",
+    "A05",
+    "A11"
+   ],
+   "decisions": [
+    {
+     "date": "1924-08-30",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "proceeds",
+     "s": "Jurisdiction upheld for the Jerusalem concessions, declined for those at Jaffa."
+    },
+    {
+     "date": "1925-03-26",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "breach",
+     "r": [
+      "declaration"
+     ],
+     "d": [
+      "compensation"
+     ],
+     "s": "Mavrommatis's Jerusalem concessions were valid and the British authorities' conduct was not in conformity with Protocol XII, but no loss was proved and the claim for indemnity was dismissed."
+    },
+    {
+     "date": "1927-10-10",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "dismissed",
+     "s": "No jurisdiction over Greece's later claim about readapting the concessions."
+    }
+   ]
+  },
+  {
+   "no": "P03",
+   "name": "Treaty of Neuilly, Article 179, Annex, Paragraph 4 (Bulgaria/Greece)",
+   "kind": "contentious",
+   "refs": [
+    "A03",
+    "A04"
+   ],
+   "decisions": [
+    {
+     "date": "1924-09-12",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration"
+     ],
+     "s": "A chamber interpreted the treaty provision on Bulgarian liability for acts committed before Bulgaria entered the war."
+    },
+    {
+     "date": "1925-03-26",
+     "type": "JUD",
+     "stage": "RI",
+     "o": "interpretation",
+     "s": "Greece's request to interpret that judgment rejected."
+    }
+   ]
+  },
+  {
+   "no": "P04",
+   "name": "Certain German Interests in Polish Upper Silesia (Germany v. Poland)",
+   "kind": "contentious",
+   "refs": [
+    "A06",
+    "A07"
+   ],
+   "decisions": [
+    {
+     "date": "1925-08-25",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "proceeds",
+     "s": "Poland's preliminary objections rejected."
+    },
+    {
+     "date": "1926-05-25",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "breach",
+     "r": [
+      "declaration"
+     ],
+     "s": "Poland's treatment of the Chorzów nitrate factory, and its notice to expropriate certain large estates, were not in conformity with the Geneva Convention on Upper Silesia."
+    }
+   ]
+  },
+  {
+   "no": "P05",
+   "name": "Denunciation of the Treaty of 2 November 1865 between China and Belgium (Belgium v. China)",
+   "kind": "contentious",
+   "refs": [
+    "A08",
+    "A14",
+    "A16",
+    "A18"
+   ],
+   "decisions": [
+    {
+     "date": "1927-01-08",
+     "type": "ORD",
+     "stage": "PM",
+     "pm": "indicated",
+     "kinds": [
+      "protect-people",
+      "property"
+     ],
+     "s": "The President indicated interim measures protecting Belgian nationals, property and shipping in China pending judgment; revoked on February 15, 1927 after the parties negotiated. The case was later removed from the list."
+    }
+   ]
+  },
+  {
+   "no": "P06",
+   "name": "Factory at Chorzów (Germany v. Poland)",
+   "kind": "contentious",
+   "refs": [
+    "A09",
+    "A12",
+    "A13",
+    "A17",
+    "A19"
+   ],
+   "decisions": [
+    {
+     "date": "1927-07-26",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "proceeds",
+     "s": "Jurisdiction upheld over Germany's claim for reparation."
+    },
+    {
+     "date": "1927-11-21",
+     "type": "ORD",
+     "stage": "PM",
+     "pm": "refused",
+     "kinds": [],
+     "s": "Germany's request for an interim payment on account refused, since it sought part of the final relief."
+    },
+    {
+     "date": "1927-12-16",
+     "type": "JUD",
+     "stage": "RI",
+     "o": "interpretation",
+     "s": "Interpretation of Judgments 7 and 8: the earlier finding on the Chorzów factory is binding on the parties."
+    },
+    {
+     "date": "1928-09-13",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "breach",
+     "r": [
+      "compensation"
+     ],
+     "s": "Poland must pay compensation for the unlawful taking of the factory, measured by the value it would have had absent the wrong; reparation must wipe out the consequences of the illegal act. Expert inquiry ordered; the case was settled and withdrawn in 1929 before any sum was fixed."
+    }
+   ]
+  },
+  {
+   "no": "P07",
+   "name": "The S.S. \"Lotus\" (France v. Turkey)",
+   "kind": "contentious",
+   "refs": [
+    "A10"
+   ],
+   "decisions": [
+    {
+     "date": "1927-09-07",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "no-breach",
+     "s": "By the President's casting vote, Turkey did not act contrary to international law in prosecuting the French officer of the Lotus after a collision on the high seas."
+    }
+   ]
+  },
+  {
+   "no": "P08",
+   "name": "Rights of Minorities in Upper Silesia (Minority Schools) (Germany v. Poland)",
+   "kind": "contentious",
+   "refs": [
+    "A15"
+   ],
+   "decisions": [
+    {
+     "date": "1928-04-26",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration"
+     ],
+     "s": "The Court interpreted the Upper Silesia Convention's rules on whether parents' declarations of a child's minority language could be verified or contested."
+    }
+   ]
+  },
+  {
+   "no": "P09",
+   "name": "Serbian Loans (France v. Kingdom of the Serbs, Croats and Slovenes)",
+   "kind": "contentious",
+   "refs": [
+    "A20"
+   ],
+   "decisions": [
+    {
+     "date": "1929-07-12",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration",
+      "performance"
+     ],
+     "s": "The Serbian loans must be serviced in gold francs, as French bondholders claimed, not in depreciated paper francs."
+    }
+   ]
+  },
+  {
+   "no": "P10",
+   "name": "Brazilian Loans (France v. Brazil)",
+   "kind": "contentious",
+   "refs": [
+    "A21"
+   ],
+   "decisions": [
+    {
+     "date": "1929-07-12",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration",
+      "performance"
+     ],
+     "s": "The Brazilian federal loans must be serviced on the basis of the gold franc."
+    }
+   ]
+  },
+  {
+   "no": "P11",
+   "name": "Territorial Jurisdiction of the International Commission of the River Oder (Germany, Czechoslovakia, Denmark, France, the United Kingdom and Sweden/Poland)",
+   "kind": "contentious",
+   "refs": [
+    "A23"
+   ],
+   "decisions": [
+    {
+     "date": "1929-09-10",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration"
+     ],
+     "s": "The Oder Commission's jurisdiction extends to the Warta and Noteć tributaries within Polish territory."
+    }
+   ]
+  },
+  {
+   "no": "P12",
+   "name": "Free Zones of Upper Savoy and the District of Gex (France/Switzerland)",
+   "kind": "contentious",
+   "refs": [
+    "A22",
+    "A24",
+    "A/B46"
+   ],
+   "decisions": [
+    {
+     "date": "1932-06-07",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "breach",
+     "r": [
+      "restitution"
+     ],
+     "s": "The 1815 free zones remain in force, and France must withdraw its customs line from them by January 1, 1934."
+    }
+   ]
+  },
+  {
+   "no": "P13",
+   "name": "Interpretation of the Statute of the Memel Territory (United Kingdom, France, Italy and Japan v. Lithuania)",
+   "kind": "contentious",
+   "refs": [
+    "A/B47",
+    "A/B49"
+   ],
+   "decisions": [
+    {
+     "date": "1932-06-24",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "proceeds",
+     "s": "Lithuania's preliminary objection rejected."
+    },
+    {
+     "date": "1932-08-11",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "mixed",
+     "r": [
+      "declaration"
+     ],
+     "s": "The Governor of Memel could dismiss the President of the Directorate for serious acts, but some of the Lithuanian authorities' related steps were not in conformity with the Statute."
+    }
+   ]
+  },
+  {
+   "no": "P14",
+   "name": "Legal Status of the South-Eastern Territory of Greenland (Norway v. Denmark; Denmark v. Norway)",
+   "kind": "contentious",
+   "refs": [
+    "A/B48",
+    "A/B55"
+   ],
+   "decisions": [
+    {
+     "date": "1932-08-03",
+     "type": "ORD",
+     "stage": "PM",
+     "pm": "refused",
+     "kinds": [],
+     "s": "Norway's request for interim measures refused; the cases were withdrawn in 1933."
+    }
+   ]
+  },
+  {
+   "no": "P15",
+   "name": "Legal Status of Eastern Greenland (Denmark v. Norway)",
+   "kind": "contentious",
+   "refs": [
+    "A/B53"
+   ],
+   "decisions": [
+    {
+     "date": "1933-04-05",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "title",
+     "r": [
+      "declaration"
+     ],
+     "s": "Denmark held sovereignty over all of Greenland; Norway's 1931 declaration of occupation of Eastern Greenland was unlawful and invalid."
+    }
+   ]
+  },
+  {
+   "no": "P16",
+   "name": "Prince von Pless Administration (Germany v. Poland)",
+   "kind": "contentious",
+   "refs": [
+    "A/B52",
+    "A/B54",
+    "A/B57",
+    "A/B59"
+   ],
+   "decisions": [
+    {
+     "date": "1933-05-11",
+     "type": "ORD",
+     "stage": "PM",
+     "pm": "refused",
+     "kinds": [],
+     "s": "Germany's request for interim measures against tax enforcement treated as moot after Poland's undertakings; the case was later withdrawn."
+    }
+   ]
+  },
+  {
+   "no": "P17",
+   "name": "Polish Agrarian Reform and German Minority (Germany v. Poland)",
+   "kind": "contentious",
+   "refs": [
+    "A/B58",
+    "A/B60"
+   ],
+   "decisions": [
+    {
+     "date": "1933-07-29",
+     "type": "ORD",
+     "stage": "PM",
+     "pm": "refused",
+     "kinds": [],
+     "s": "Germany's request for interim measures refused as going beyond the subject of the case; the case was later withdrawn."
+    }
+   ]
+  },
+  {
+   "no": "P18",
+   "name": "Appeal from a Judgment of the Hungaro-Czechoslovak Mixed Arbitral Tribunal (The Peter Pázmány University) (Czechoslovakia v. Hungary)",
+   "kind": "contentious",
+   "refs": [
+    "A/B56",
+    "A/B61"
+   ],
+   "decisions": [
+    {
+     "date": "1933-12-15",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "breach",
+     "r": [
+      "restitution"
+     ],
+     "s": "Appeal rejected: Czechoslovakia must restore to the Peter Pázmány University the property it had taken over."
+    }
+   ]
+  },
+  {
+   "no": "P19",
+   "name": "Lighthouses Case between France and Greece",
+   "kind": "contentious",
+   "refs": [
+    "A/B62"
+   ],
+   "decisions": [
+    {
+     "date": "1934-03-17",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration"
+     ],
+     "s": "The 1913 Ottoman lighthouse concession held by a French firm was duly entered into and is operative against Greece."
+    }
+   ]
+  },
+  {
+   "no": "P20",
+   "name": "The Oscar Chinn Case (United Kingdom v. Belgium)",
+   "kind": "contentious",
+   "refs": [
+    "A/B63"
+   ],
+   "decisions": [
+    {
+     "date": "1934-12-12",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "no-breach",
+     "s": "Belgium did not breach its obligations by its measures favoring a state-linked river transport company in the Congo."
+    }
+   ]
+  },
+  {
+   "no": "P21",
+   "name": "Pajzs, Csáky, Esterházy (Hungary v. Yugoslavia)",
+   "kind": "contentious",
+   "refs": [
+    "A/B66",
+    "A/B68"
+   ],
+   "decisions": [
+    {
+     "date": "1936-12-16",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "no-breach",
+     "s": "Hungary's appeal from the Mixed Arbitral Tribunal rejected; Yugoslavia's agrarian measures were not shown to breach the agreements."
+    }
+   ]
+  },
+  {
+   "no": "P22",
+   "name": "Diversion of Water from the Meuse (Netherlands v. Belgium)",
+   "kind": "contentious",
+   "refs": [
+    "A/B70"
+   ],
+   "decisions": [
+    {
+     "date": "1937-06-28",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "no-breach",
+     "s": "The Netherlands' claims and Belgium's counter-claim both rejected."
+    }
+   ]
+  },
+  {
+   "no": "P23",
+   "name": "Lighthouses in Crete and Samos (France/Greece)",
+   "kind": "contentious",
+   "refs": [
+    "A/B71"
+   ],
+   "decisions": [
+    {
+     "date": "1937-10-08",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration"
+     ],
+     "s": "The lighthouse concession was operative as regards lighthouses in Crete and Samos."
+    }
+   ]
+  },
+  {
+   "no": "P24",
+   "name": "Borchgrave (Belgium v. Spain)",
+   "kind": "contentious",
+   "refs": [
+    "A/B72",
+    "A/B73"
+   ],
+   "decisions": [
+    {
+     "date": "1937-11-06",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "proceeds",
+     "s": "Spain's preliminary objections rejected; the case was withdrawn in 1938."
+    }
+   ]
+  },
+  {
+   "no": "P25",
+   "name": "Phosphates in Morocco (Italy v. France)",
+   "kind": "contentious",
+   "refs": [
+    "A/B74"
+   ],
+   "decisions": [
+    {
+     "date": "1938-06-14",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "dismissed",
+     "s": "No jurisdiction: the dispute arose from facts before France accepted the Court's jurisdiction."
+    }
+   ]
+  },
+  {
+   "no": "P26",
+   "name": "Panevezys-Saldutiskis Railway (Estonia v. Lithuania)",
+   "kind": "contentious",
+   "refs": [
+    "A/B75",
+    "A/B76"
+   ],
+   "decisions": [
+    {
+     "date": "1939-02-28",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "dismissed",
+     "s": "Lithuania's objection upheld: local remedies had not been exhausted."
+    }
+   ]
+  },
+  {
+   "no": "P27",
+   "name": "Electricity Company of Sofia and Bulgaria (Belgium v. Bulgaria)",
+   "kind": "contentious",
+   "refs": [
+    "A/B77",
+    "A/B79",
+    "A/B80"
+   ],
+   "decisions": [
+    {
+     "date": "1939-04-04",
+     "type": "JUD",
+     "stage": "PO",
+     "o": "proceeds",
+     "s": "Bulgaria's objection partly upheld; the case proceeds on the rest."
+    },
+    {
+     "date": "1939-12-05",
+     "type": "ORD",
+     "stage": "PM",
+     "pm": "indicated",
+     "kinds": [
+      "non-aggravation",
+      "property"
+     ],
+     "s": "Bulgaria must ensure that no step is taken capable of prejudicing the rights Belgium claims or aggravating the dispute; the war ended the case."
+    }
+   ]
+  },
+  {
+   "no": "P28",
+   "name": "Société Commerciale de Belgique (Belgium v. Greece)",
+   "kind": "contentious",
+   "refs": [
+    "A/B78"
+   ],
+   "decisions": [
+    {
+     "date": "1939-06-15",
+     "type": "JUD",
+     "stage": "ME",
+     "o": "declaratory",
+     "r": [
+      "declaration"
+     ],
+     "s": "Arbitral awards in the company's favor are binding on Greece; the Court declined to rule on how Greece should pay, given its financial position."
+    }
+   ]
+  },
+  {
+   "no": "P29",
+   "name": "Delimitation of the Territorial Waters between the Island of Castellorizo and the Coasts of Anatolia (Italy/Turkey)",
+   "kind": "contentious",
+   "refs": [
+    "A/B51"
+   ],
+   "decisions": []
+  },
+  {
+   "no": "P30",
+   "name": "Losinger (Switzerland v. Yugoslavia)",
+   "kind": "contentious",
+   "refs": [
+    "A/B67",
+    "A/B69"
+   ],
+   "decisions": []
+  },
+  {
+   "no": "P40",
+   "name": "Designation of the Workers' Delegate for the Netherlands at the Third ILO Conference",
+   "kind": "advisory",
+   "refs": [
+    "B01"
+   ],
+   "decisions": [
+    {
+     "date": "1922-07-31",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The Netherlands' workers' delegate had been nominated in accordance with the Treaty of Versailles."
+    }
+   ]
+  },
+  {
+   "no": "P41",
+   "name": "Competence of the ILO in regard to Agricultural Labour",
+   "kind": "advisory",
+   "refs": [
+    "B02"
+   ],
+   "decisions": [
+    {
+     "date": "1922-08-12",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The ILO's competence extends to the conditions of persons employed in agriculture."
+    }
+   ]
+  },
+  {
+   "no": "P42",
+   "name": "Competence of the ILO to Examine Proposals on Methods of Agricultural Production",
+   "kind": "advisory",
+   "refs": [
+    "B03"
+   ],
+   "decisions": [
+    {
+     "date": "1922-08-12",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On whether the ILO could examine proposals for organizing agricultural production."
+    }
+   ]
+  },
+  {
+   "no": "P43",
+   "name": "Nationality Decrees Issued in Tunis and Morocco",
+   "kind": "advisory",
+   "refs": [
+    "B04"
+   ],
+   "decisions": [
+    {
+     "date": "1923-02-07",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The Franco-British dispute over the nationality decrees was not a matter solely within France's domestic jurisdiction."
+    }
+   ]
+  },
+  {
+   "no": "P44",
+   "name": "Status of Eastern Carelia",
+   "kind": "advisory",
+   "refs": [
+    "B05"
+   ],
+   "decisions": [
+    {
+     "date": "1923-07-23",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The Court declined to give an opinion, since Russia, a non-member party to the dispute, had not consented."
+    }
+   ]
+  },
+  {
+   "no": "P45",
+   "name": "German Settlers in Poland",
+   "kind": "advisory",
+   "refs": [
+    "B06"
+   ],
+   "decisions": [
+    {
+     "date": "1923-09-10",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "r": [
+      "declaration"
+     ],
+     "s": "Poland's measures evicting German settlers were not in conformity with its minority-protection obligations."
+    }
+   ]
+  },
+  {
+   "no": "P46",
+   "name": "Acquisition of Polish Nationality",
+   "kind": "advisory",
+   "refs": [
+    "B07"
+   ],
+   "decisions": [
+    {
+     "date": "1923-09-15",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On which persons acquired Polish nationality under the Minorities Treaty; the League Council was competent to address it."
+    }
+   ]
+  },
+  {
+   "no": "P47",
+   "name": "Jaworzina (Polish-Czechoslovakian Frontier)",
+   "kind": "advisory",
+   "refs": [
+    "B08"
+   ],
+   "decisions": [
+    {
+     "date": "1923-12-06",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The Conference of Ambassadors' 1920 decision had definitively settled the frontier in the Jaworzina district."
+    }
+   ]
+  },
+  {
+   "no": "P48",
+   "name": "Monastery of Saint-Naoum (Albanian Frontier)",
+   "kind": "advisory",
+   "refs": [
+    "B09"
+   ],
+   "decisions": [
+    {
+     "date": "1924-09-04",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The Conference of Ambassadors' allocation of the monastery to Albania was definitive."
+    }
+   ]
+  },
+  {
+   "no": "P49",
+   "name": "Exchange of Greek and Turkish Populations",
+   "kind": "advisory",
+   "refs": [
+    "B10"
+   ],
+   "decisions": [
+    {
+     "date": "1925-02-21",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On the meaning of \"established\" persons exempt from the Greek–Turkish population exchange."
+    }
+   ]
+  },
+  {
+   "no": "P50",
+   "name": "Polish Postal Service in Danzig",
+   "kind": "advisory",
+   "refs": [
+    "B11"
+   ],
+   "decisions": [
+    {
+     "date": "1925-05-16",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "Poland's postal service in Danzig was not confined to its post office building."
+    }
+   ]
+  },
+  {
+   "no": "P51",
+   "name": "Interpretation of Article 3, Paragraph 2, of the Treaty of Lausanne (Mosul)",
+   "kind": "advisory",
+   "refs": [
+    "B12"
+   ],
+   "decisions": [
+    {
+     "date": "1925-11-21",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The League Council's decision on the Turkey–Iraq frontier would be binding, taken unanimously without the votes of the parties."
+    }
+   ]
+  },
+  {
+   "no": "P52",
+   "name": "Competence of the ILO to Regulate Incidentally the Personal Work of the Employer",
+   "kind": "advisory",
+   "refs": [
+    "B13"
+   ],
+   "decisions": [
+    {
+     "date": "1926-07-23",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The ILO could incidentally regulate employers' personal work when protecting workers."
+    }
+   ]
+  },
+  {
+   "no": "P53",
+   "name": "Jurisdiction of the European Commission of the Danube",
+   "kind": "advisory",
+   "refs": [
+    "B14"
+   ],
+   "decisions": [
+    {
+     "date": "1927-12-08",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On the Danube Commission's powers on the Galatz–Braila sector."
+    }
+   ]
+  },
+  {
+   "no": "P54",
+   "name": "Jurisdiction of the Courts of Danzig",
+   "kind": "advisory",
+   "refs": [
+    "B15"
+   ],
+   "decisions": [
+    {
+     "date": "1928-03-03",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "Danzig railway officials could sue in Danzig courts on claims based on a Polish–Danzig agreement."
+    }
+   ]
+  },
+  {
+   "no": "P55",
+   "name": "Interpretation of the Greco-Turkish Agreement of 1 December 1926",
+   "kind": "advisory",
+   "refs": [
+    "B16"
+   ],
+   "decisions": [
+    {
+     "date": "1928-08-28",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On the mixed commission's power to refer questions to the arbitrator under the agreement."
+    }
+   ]
+  },
+  {
+   "no": "P56",
+   "name": "Greco-Bulgarian \"Communities\"",
+   "kind": "advisory",
+   "refs": [
+    "B17"
+   ],
+   "decisions": [
+    {
+     "date": "1930-07-31",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On the meaning of \"community\" in the Greco-Bulgarian emigration convention."
+    }
+   ]
+  },
+  {
+   "no": "P57",
+   "name": "Free City of Danzig and the ILO",
+   "kind": "advisory",
+   "refs": [
+    "B18"
+   ],
+   "decisions": [
+    {
+     "date": "1930-08-26",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "Danzig's special status did not allow it to join the ILO without Poland's consent."
+    }
+   ]
+  },
+  {
+   "no": "P58",
+   "name": "Access to German Minority Schools in Upper Silesia",
+   "kind": "advisory",
+   "refs": [
+    "A/B40"
+   ],
+   "decisions": [
+    {
+     "date": "1931-05-15",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On whether children excluded after language tests could later be admitted to minority schools."
+    }
+   ]
+  },
+  {
+   "no": "P59",
+   "name": "Customs Regime between Germany and Austria",
+   "kind": "advisory",
+   "refs": [
+    "A/B41"
+   ],
+   "decisions": [
+    {
+     "date": "1931-09-05",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "By eight votes to seven, the proposed Austro-German customs union was incompatible with Austria's 1922 Geneva Protocol."
+    }
+   ]
+  },
+  {
+   "no": "P60",
+   "name": "Railway Traffic between Lithuania and Poland",
+   "kind": "advisory",
+   "refs": [
+    "A/B42"
+   ],
+   "decisions": [
+    {
+     "date": "1931-10-15",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "Lithuania was not obliged to open the Landwarów–Kaisiadorys railway sector to traffic."
+    }
+   ]
+  },
+  {
+   "no": "P61",
+   "name": "Access to, or Anchorage in, the Port of Danzig, of Polish War Vessels",
+   "kind": "advisory",
+   "refs": [
+    "A/B43"
+   ],
+   "decisions": [
+    {
+     "date": "1931-12-11",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The treaties gave Poland no general right of access for its warships to the port of Danzig."
+    }
+   ]
+  },
+  {
+   "no": "P62",
+   "name": "Treatment of Polish Nationals in the Danzig Territory",
+   "kind": "advisory",
+   "refs": [
+    "A/B44"
+   ],
+   "decisions": [
+    {
+     "date": "1932-02-04",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "Poland could not invoke Danzig's constitution, only the treaties, about the treatment of its nationals there."
+    }
+   ]
+  },
+  {
+   "no": "P63",
+   "name": "Interpretation of the Greco-Bulgarian Agreement of 9 December 1927",
+   "kind": "advisory",
+   "refs": [
+    "A/B45"
+   ],
+   "decisions": [
+    {
+     "date": "1932-03-08",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "On whether the Caphandaris–Molloff agreement obliged Greece to pay certain reparations sums."
+    }
+   ]
+  },
+  {
+   "no": "P64",
+   "name": "Interpretation of the 1919 Convention concerning Employment of Women during the Night",
+   "kind": "advisory",
+   "refs": [
+    "A/B50"
+   ],
+   "decisions": [
+    {
+     "date": "1932-11-15",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "s": "The convention applies to women in supervisory and managerial posts, not only manual workers."
+    }
+   ]
+  },
+  {
+   "no": "P65",
+   "name": "Minority Schools in Albania",
+   "kind": "advisory",
+   "refs": [
+    "A/B64"
+   ],
+   "decisions": [
+    {
+     "date": "1935-04-06",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "r": [
+      "declaration"
+     ],
+     "s": "Albania's abolition of private schools was not justified under its minorities declaration, which requires equality in fact as well as in law."
+    }
+   ]
+  },
+  {
+   "no": "P66",
+   "name": "Consistency of Certain Danzig Legislative Decrees with the Constitution of the Free City",
+   "kind": "advisory",
+   "refs": [
+    "A/B65"
+   ],
+   "decisions": [
+    {
+     "date": "1935-12-04",
+     "type": "ADV",
+     "stage": "AO",
+     "o": "advisory",
+     "r": [
+      "declaration"
+     ],
+     "s": "Danzig's 1935 decrees letting judges punish acts by analogy to \"sound popular feeling\" were inconsistent with the Free City's constitution and the rule of law."
+    }
+   ]
+  }
+ ]
+}

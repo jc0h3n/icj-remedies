@@ -118,6 +118,23 @@ await step("ICJ decisions since the corpus", async () => {
   fs.writeFileSync("data/icj-docs.json", JSON.stringify(out, null, 1));
 });
 
+// Permanent Court of International Justice: its published series list every decision with a link.
+await step("PCIJ series (judgments, orders, advisory opinions)", async () => {
+  const out = [];
+  for (const s of ["a", "b", "ab"]) {
+    await sleep(1500);
+    const html = await (await fetch(`https://www.icj-cij.org/pcij-series-${s}`, { headers: BROWSER })).text();
+    for (const block of html.split(/<h3>/).slice(1)) {
+      const ref = block.match(/^([^<]+)<\/h3>/)[1].trim();
+      const docs = [...block.matchAll(/href="([^"]+\.pdf)"[^>]*>([^<]+)<\/a>/g)].map(m => [decode(m[2].trim()), new URL(m[1], "https://www.icj-cij.org").href])
+        .filter(([t]) => /^(Judgment|Order|Advisory Opinion)/i.test(t));
+      out.push({ ref, docs });
+    }
+  }
+  if (out.length < 70) throw new Error(`only ${out.length} PCIJ entries`);
+  fs.writeFileSync("data/pcij-docs.json", JSON.stringify(out, null, 1));
+});
+
 function decode(s) {
   return s.replace(/&amp;/g, "&").replace(/&#039;|&#39;|&rsquo;/g, "’").replace(/&quot;/g, '"').replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 }

@@ -141,3 +141,5 @@ footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--grid);
 @media (max-width: 600px) { .decision { margin-left: 0; } .case > summary { grid-template-columns: 2.6em minmax(0, 1fr); } .case .meta { grid-column: 2; white-space: normal; } }
 .money { font-variant-numeric: tabular-nums; white-space: nowrap; }
 nav.tabs { font-size: 0.95em; }
+
+.courts { font-size: 0.95em; margin: -12px 0 22px; padding: 8px 0; border-block: 1px solid var(--grid); }

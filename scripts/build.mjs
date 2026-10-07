@@ -89,10 +89,33 @@ const name = code => countries[code]?.[0] || code;
 const region = code => countries[code]?.[1] || null;
 const out = [...cases.values()].sort((a, b) => a.no - b.no).map(c => ({
   ...c,
+  court: "ICJ",
   parties: c.kind === "contentious"
     ? { a: (c.applicant || "").split("-").filter(Boolean).map(x => [x, name(x), region(x)]), r: (c.respondent || "").split("-").filter(x => x && x !== "NA").map(x => [x, name(x), region(x)]) }
     : { body: c.applicant },
 }));
+
+// The Permanent Court of International Justice (1922–1946), coded by hand in data/pcij.json. Each decision is
+// linked to its document in the PCIJ series by matching the date in the document's title.
+const MONTHS = { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7, jully: 7, august: 8, september: 9, october: 10, november: 11, december: 12, "décember": 12 };
+const isoOf = title => {
+  const m = title.match(/(\d{1,2}) (\p{L}+) (\d{4})/u);
+  return m && MONTHS[m[2].toLowerCase()] ? `${m[3]}-${String(MONTHS[m[2].toLowerCase()]).padStart(2, "0")}-${m[1].padStart(2, "0")}` : null;
+};
+const pcijDocs = fs.existsSync("data/pcij-docs.json") ? read("data/pcij-docs.json") : [];
+for (const c of read("data/pcij.json").cases) {
+  const docs = pcijDocs.filter(d => c.refs.includes(d.ref)).flatMap(d => d.docs.map(([t, url]) => ({ t, url, date: isoOf(t), ref: d.ref })));
+  const decisions = c.decisions.map(d => {
+    const doc = docs.find(x => x.date === d.date && (d.type === "ORD" ? /^Order/i.test(x.t) : d.type === "ADV" ? /^Advisory/i.test(x.t) : /^Judgment/i.test(x.t)))
+      || docs.find(x => x.date === d.date);
+    if (!doc) console.warn(`PCIJ ${c.no} ${d.date}: no document link found`);
+    return { src: "hand", ...d, url: doc?.url, series: doc?.ref };
+  }).sort((a, b) => a.date.localeCompare(b.date));
+  const years = [...decisions.map(d => +d.date.slice(0, 4)), ...docs.map(d => +(d.date || "0").slice(0, 4)).filter(Boolean)];
+  out.push({ no: c.no, name: c.name, kind: c.kind, court: "PCIJ", refs: c.refs, decisions,
+    year: years.length ? Math.min(...years) : null, introduced: years.length ? Math.min(...years) : null,
+    concluded: years.length ? Math.max(...years) : null, pending: false, parties: {} });
+}
 
 fs.mkdirSync("site/data", { recursive: true });
 const data = {
