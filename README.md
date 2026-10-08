@@ -1,5 +1,7 @@
 # What the Court Ordered
 
+https://jc0h3n.github.io/icj-remedies/
+
 Remedies at the World Court: the International Court of Justice (since 1946) and the Permanent Court of International Justice (1922–1946), shown separately or together. For every case the site shows:
 
 - what the Court found: a breach, a boundary decided, claims rejected, or no decision on the merits;
