@@ -122,6 +122,7 @@ const data = {
   built: new Date().toISOString().slice(0, 10),
   corpus: { version: corpus.version, doi: corpus.doi, cutoff: corpus.cutoff },
   cases: out, pending,
+  compensation: fs.existsSync("data/compensation.json") ? read("data/compensation.json") : null,   // hand-researched payment history
 };
 fs.writeFileSync("site/data/icj.json", JSON.stringify(data));
 const all = out.flatMap(c => c.decisions);

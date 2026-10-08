@@ -1,0 +1,393 @@
+{
+  "updated": "2026-10-08",
+  "awarded": [
+    {
+      "no": "1",
+      "court": "ICJ",
+      "short": "Corfu Channel",
+      "payer": "Albania",
+      "payee": "United Kingdom",
+      "merits": "1949-04-09",
+      "award": "1949-12-15",
+      "heads": [
+        {
+          "label": "Destruction of HMS Saumarez (replacement cost)",
+          "currency": "GBP",
+          "amount": 700087
+        },
+        {
+          "label": "Damage to HMS Volage",
+          "currency": "GBP",
+          "amount": 93812
+        },
+        {
+          "label": "Deaths and injuries of naval personnel (pensions, grants, administration, medical)",
+          "currency": "GBP",
+          "amount": 50048
+        }
+      ],
+      "total": {
+        "currency": "GBP",
+        "amount": 843947
+      },
+      "claimed": {
+        "currency": "GBP",
+        "amount": 843947,
+        "note": "UK Memorial claimed 875,000; its 28 July 1949 observations revised the claim to 843,947, which the Court awarded in full (non ultra petita: it could not award more)."
+      },
+      "terms": "Operative clause fixes the sum of 843,947 pounds; no payment deadline or interest provision found in the published summary of the judgment.",
+      "method": "Albania did not appear on the compensation phase, so the Court proceeded under Article 53 of the Statute. It appointed two naval experts (order of 19 November 1949) who reviewed the UK's itemized figures; they put Saumarez at 716,780 net and Volage at 90,800, found the UK's figures a fair and accurate estimate, and the Court accepted the UK's own (higher) itemized figures, holding replacement cost at the time of loss to be the measure. Personnel costs were accepted as proved by UK documents.",
+      "status": "settled by later agreement",
+      "history": [
+        {
+          "date": "1949-12-15",
+          "event": "Court awards the UK 843,947 pounds against Albania (12 votes to 2)."
+        },
+        {
+          "date": "1950",
+          "event": "Albania offers a token sum (Wikipedia, citing Rosenne, says 40,000 pounds; a history blog says 50,000); the UK rejects it, and talks break off in January 1951."
+        },
+        {
+          "date": "1953-02-20",
+          "event": "An arbitrator awards Albania the Nazi-looted monetary gold held by the Tripartite Commission in London (against an Italian claim); under the Washington Statement the gold was earmarked to go to the UK to partly satisfy the Corfu Channel judgment."
+        },
+        {
+          "date": "1954-06-15",
+          "event": "In the Monetary Gold case the ICJ declines jurisdiction over Italy's claim to the gold; the gold stays in London."
+        },
+        {
+          "date": "1992-05-08",
+          "event": "After diplomatic relations are restored (1991), the UK and Albania announce an agreement: both express regret, Albania is to pay 2 million US dollars and the UK is to release about 1,574 kg of gold. A July 1992 article (The Athenian) reported the sums as roughly 1.1 million pounds payable by Albania and about 10 million pounds of gold returning to Tirana."
+        },
+        {
+          "date": "1996",
+          "event": "After the other Tripartite powers settled their claims, the settlement was implemented; Albania, which at first said it could not pay, paid the 2 million dollars later in 1996 and the gold was returned. The judgment was treated as settled."
+        }
+      ],
+      "years_to_payment": 47,
+      "sources": [
+        "https://www.icj-cij.org/node/103096",
+        "https://www.icj-cij.org/node/104579",
+        "https://www.icj-cij.org/case/1",
+        "https://en.wikipedia.org/wiki/Corfu_Channel_case",
+        "https://en.wikipedia.org/wiki/Corfu_Channel_incident",
+        "https://www.the-athenian.com/site/1992/07/01/the-corfu-channel-incident/",
+        "https://historysshadow.wordpress.com/2013/11/12/the-difficulties-of-diplomacy-the-case-of-the-corfu-channel-and-albanias-gold/"
+      ]
+    },
+    {
+      "no": "103",
+      "court": "ICJ",
+      "short": "Ahmadou Sadio Diallo",
+      "payer": "Democratic Republic of the Congo",
+      "payee": "Guinea",
+      "merits": "2010-11-30",
+      "award": "2012-06-19",
+      "heads": [
+        {
+          "label": "Non-material injury",
+          "currency": "USD",
+          "amount": 85000
+        },
+        {
+          "label": "Material injury (personal property)",
+          "currency": "USD",
+          "amount": 10000
+        },
+        {
+          "label": "Lost remuneration during detention and after expulsion",
+          "currency": "USD",
+          "amount": 0
+        },
+        {
+          "label": "Loss of potential earnings",
+          "currency": "USD",
+          "amount": 0
+        }
+      ],
+      "total": {
+        "currency": "USD",
+        "amount": 95000
+      },
+      "claimed": {
+        "currency": "USD",
+        "amount": 11590148,
+        "note": "Guinea's Memorial, plus 500,000 USD for costs (rejected; each party bears own costs). The DRC offered 30,000 USD for non-pecuniary injury only."
+      },
+      "terms": "To be paid by 31 August 2012; post-judgment interest of 6% per year on the principal from 1 September 2012 if late.",
+      "method": "Only injury to Mr Diallo personally was considered (losses of his companies were excluded). The Court applied a flexible burden of proof because the DRC was better placed to hold some evidence. Non-material injury (about 72 days of detention, arbitrary expulsion) and the personal property loss were set on equitable grounds, since the value of the property was not proved; remuneration and potential-earnings claims were rejected as unproved, speculative or outside the case.",
+      "status": "unconfirmed",
+      "history": [
+        {
+          "date": "2012-06-19",
+          "event": "Court awards 95,000 USD, due by 31 August 2012."
+        },
+        {
+          "date": "2012-06-20",
+          "event": "Radio Okapi reports the DRC state's lawyer said the DRC was satisfied with the amount and must pay within the deadline to avoid 6% interest."
+        },
+        {
+          "date": "2012-2026",
+          "event": "No public source found reports whether or when the DRC paid. The ICJ case page lists no post-judgment documents, discontinuance or removal from the List after the 19 June 2012 judgment."
+        }
+      ],
+      "years_to_payment": null,
+      "sources": [
+        "https://www.icj-cij.org/node/103208",
+        "https://www.icj-cij.org/case/103",
+        "https://www.radiookapi.net/actualite/2012/06/20/rdc-le-pays-paiera-95-000-usd-sur-les-12-millions-exiges-par-la-guinee"
+      ]
+    },
+    {
+      "no": "116",
+      "court": "ICJ",
+      "short": "Armed Activities on the Territory of the Congo",
+      "payer": "Uganda",
+      "payee": "Democratic Republic of the Congo",
+      "merits": "2005-12-19",
+      "award": "2022-02-09",
+      "heads": [
+        {
+          "label": "Damage to persons",
+          "currency": "USD",
+          "amount": 225000000
+        },
+        {
+          "label": "Damage to property",
+          "currency": "USD",
+          "amount": 40000000
+        },
+        {
+          "label": "Damage related to natural resources",
+          "currency": "USD",
+          "amount": 60000000
+        }
+      ],
+      "total": {
+        "currency": "USD",
+        "amount": 325000000
+      },
+      "claimed": {
+        "currency": "USD",
+        "amount": 13478122950,
+        "note": "Total DRC claim as reported in the International Review of the Red Cross case note; the award is under 3% of it. Pre-judgment interest and costs were refused."
+      },
+      "terms": "Five annual instalments of 65 million USD due 1 September each year, 2022 to 2026; 6% post-judgment interest on any overdue amount from the day after the due date.",
+      "method": "The Court used a global sum for each head, an exceptional approach where injury is shown but cannot be precisely valued, awarding within the range indicated by the evidence and taking account of equitable considerations. It appointed four independent experts (report December 2020) but set aside most expert valuations (e.g. property), relied heavily on UN reports, and rejected claims lacking proof or direct causation (e.g. macroeconomic damage, coltan, timber, private dwellings).",
+      "status": "paid in full, in five instalments",
+      "history": [
+        {
+          "date": "2022-02-09",
+          "event": "Court awards 325 million USD in five instalments; Uganda calls the ruling unfair."
+        },
+        {
+          "date": "2022-09-01",
+          "event": "Uganda pays the first 65 million USD (confirmed by DRC spokesman Patrick Muyaya; reported 12 September 2022)."
+        },
+        {
+          "date": "2023",
+          "event": "Second instalment paid, per JusticeInfo (14 October 2024), which says the account of the victims' fund (FRIVAO) then held 195 million USD after three payments; exact date not found."
+        },
+        {
+          "date": "2024",
+          "event": "Third instalment paid, per the same JusticeInfo article; exact date not found."
+        },
+        {
+          "date": "2025-2026",
+          "event": "Fourth instalment: a 9 June 2026 article reports four tranches (260 million USD) paid; the date of the fourth payment was not found."
+        },
+        {
+          "date": "2026-09-03",
+          "event": "DRC Justice Minister Guillaume Ngefa says the final instalment was received on 3 September 2026, closing the ICJ payment schedule (report of 1 October 2026). Whether any late-payment interest was paid is unconfirmed."
+        },
+        {
+          "date": "2024-2026",
+          "event": "Of the money, DRC officials cite 195 million USD as available to the victims' fund FRIVAO, FRIVAO's interim coordination cites 154.7 million USD received after deductions by the Congolese state, and only about 28 million USD had reached victims by May 2026; the fund is the subject of embezzlement prosecutions (the former Justice Minister was convicted on 18 September 2026 per a report I could only see summarized, unconfirmed)."
+        }
+      ],
+      "years_to_payment": 4.6,
+      "sources": [
+        "https://www.icj-cij.org/case/116",
+        "https://news.un.org/en/story/2022/02/1111612",
+        "https://www.cambridge.org/core/journals/international-review-of-the-red-cross/article/case-note-the-international-court-of-justices-2022-reparations-judgment-in-drc-v-uganda/E1A63F41D2DAD7266C58C6272CE13FBF",
+        "https://www.monitor.co.ug/uganda/news/national/government-pays-initial-shs250b-to-drc-in-plunder-case-3945348",
+        "https://www.justiceinfo.net/en/137058-drc-victims-fund-overhauled-amid-embezzlement-suspicions.html",
+        "https://www.strong2kinmoov.com/2026/06/09/frivao-des-interrogations-sur-la-gestion-de-223-millions-de-dollars-destines-aux-victimes-de-la-guerre-de-kisangani/",
+        "https://www.congoquotidien.com/2026/10/01/reparations-collectives-grande-orientale/",
+        "https://actualite.cd/2026/05/06/scandale-frivao-sur-195-millions-usd-disponibles-seuls-28-millions-ont-atteint-les"
+      ]
+    },
+    {
+      "no": "150",
+      "court": "ICJ",
+      "short": "Certain Activities Carried Out by Nicaragua in the Border Area",
+      "payer": "Nicaragua",
+      "payee": "Costa Rica",
+      "merits": "2015-12-16",
+      "award": "2018-02-02",
+      "heads": [
+        {
+          "label": "Impairment or loss of environmental goods and services (before recovery)",
+          "currency": "USD",
+          "amount": 120000
+        },
+        {
+          "label": "Restoration measures for the wetland",
+          "currency": "USD",
+          "amount": 2708.39
+        },
+        {
+          "label": "Costs and expenses (monitoring, dyke/caño works)",
+          "currency": "USD",
+          "amount": 236032.16
+        },
+        {
+          "label": "Pre-judgment interest on costs and expenses",
+          "currency": "USD",
+          "amount": 20150.04
+        }
+      ],
+      "total": {
+        "currency": "USD",
+        "amount": 378890.59
+      },
+      "claimed": {
+        "currency": "USD",
+        "amount": 6711000,
+        "note": "About 6.711 million plus roughly 500,000 pre-judgment interest (ecosystem services approach); Nicaragua argued for no more than 188,504 (replacement cost method)."
+      },
+      "terms": "Payable by 2 April 2018; 6% per year post-judgment interest on the principal (358,740.55) if late.",
+      "method": "First ICJ compensation for environmental damage. The Court rejected both parties' valuation methods in full, assessed damage 'from the perspective of the ecosystem as a whole' by estimating loss of environmental goods and services before recovery, and awarded a global sum for that head. Costs were compensable only with a sufficiently direct and certain causal link; no pre-judgment interest on the environmental damage.",
+      "status": "paid in full",
+      "history": [
+        {
+          "date": "2018-02-02",
+          "event": "Court fixes 378,890.59 USD."
+        },
+        {
+          "date": "2018-03-08",
+          "event": "Nicaragua transfers the full amount to Costa Rica, ahead of the 2 April deadline."
+        },
+        {
+          "date": "2018-03-22",
+          "event": "Nicaragua informs the Court Registry by letter of the transfer."
+        }
+      ],
+      "years_to_payment": 0.1,
+      "sources": [
+        "https://www.icj-cij.org/node/105577",
+        "https://www.icj-cij.org/node/105730",
+        "https://www.escr-net.org/caselaw/2019/activities-carried-out-nicaragua-border-area-costa-rica-v-nicaragua-compensation-owed/"
+      ]
+    },
+    {
+      "no": "P01",
+      "court": "PCIJ",
+      "short": "S.S. \"Wimbledon\"",
+      "payer": "Germany",
+      "payee": "France (for the charterers; applicants were the UK, France, Italy and Japan)",
+      "merits": "1923-08-17",
+      "award": "1923-08-17",
+      "heads": [],
+      "total": {
+        "currency": "FRF",
+        "amount": 140749.35
+      },
+      "terms": "Unconfirmed. Time magazine reports damages of 140,749 French francs payable to the French Government; the exact 140,749.35 figure, interest and deadline are as supplied by the project brief and could not be checked against the judgment text (PCIJ PDF blocked).",
+      "method": "Unconfirmed; the judgment text could not be opened. Time reports a 9-4 vote.",
+      "status": "unconfirmed",
+      "history": [
+        {
+          "date": "1923-08-17",
+          "event": "PCIJ finds Germany wrongly refused the Wimbledon passage through the Kiel Canal and orders damages (Time: 140,749 francs) to France."
+        },
+        {
+          "date": "1923-2026",
+          "event": "No public source found shows whether Germany paid."
+        }
+      ],
+      "years_to_payment": null,
+      "sources": [
+        "https://time.com/archive/6649683/world-court-kiel-canal-suit/",
+        "https://en.wikipedia.org/wiki/S.S._Wimbledon_case"
+      ]
+    }
+  ],
+  "owed": [
+    {
+      "no": "64",
+      "court": "ICJ",
+      "short": "Tehran Hostages",
+      "payer": "Iran",
+      "payee": "United States",
+      "judgment": "1980-05-24",
+      "what_happened": "The Court held Iran bound to make reparation for the injury caused to the US, with the form and amount to be settled later, but no further judgment on the amount was issued. By US letters of 6 April and 1 May 1981 the US discontinued its claims under the Algiers Declarations of 19 January 1981 (hostages released 20 January), and the Court removed the case from the List by Order of 12 May 1981.",
+      "sources": [
+        "https://www.icj-cij.org/case/64",
+        "https://www.icj-cij.org/node/103389"
+      ]
+    },
+    {
+      "no": "70",
+      "court": "ICJ",
+      "short": "Military and Paramilitary Activities in and against Nicaragua",
+      "payer": "United States",
+      "payee": "Nicaragua",
+      "judgment": "1986-06-27",
+      "what_happened": "The Court found the US must make reparation, amount to be fixed later if not agreed. On 18 November 1987 it set time-limits for pleadings on the form and amount; Nicaragua filed its Memorial on 29 March 1988. In September 1991, under the new government, Nicaragua told the Court it no longer wished to continue; the US welcomed this and the case was removed from the List by Order of 26 September 1991. No amount was ever fixed or paid.",
+      "sources": [
+        "https://www.icj-cij.org/case/70",
+        "https://icj-cij.org/case/70/discontinuance"
+      ]
+    },
+    {
+      "no": "92",
+      "court": "ICJ",
+      "short": "Gabcikovo-Nagymaros Project",
+      "payer": "Hungary and Slovakia (mutual)",
+      "payee": "Slovakia and Hungary (mutual)",
+      "judgment": "1997-09-25",
+      "what_happened": "The Court held each state must compensate the other for damage caused (Hungary for suspending and abandoning works; Slovakia for operating the dam), without fixing amounts. Slovakia asked for an additional judgment on 3 September 1998 saying Hungary would not implement the judgment; on 30 June 2017 it asked to discontinue, Hungary did not object, and the Court recorded the discontinuance on 18 July 2017, both sides reserving the right to request an additional judgment. Whether any compensation changed hands is unconfirmed.",
+      "sources": [
+        "https://www.icj-cij.org/case/92"
+      ]
+    },
+    {
+      "no": "164",
+      "court": "ICJ",
+      "short": "Certain Iranian Assets",
+      "payer": "United States",
+      "payee": "Iran",
+      "judgment": "2023-03-30",
+      "what_happened": "The Court found Iran entitled to compensation and gave the parties 24 months to agree, failing which it would fix the amount at either party's request (14-1). The ICJ case page lists an Order of 25 February 2026 fixing time-limits for the Memorial and Counter-Memorial on compensation, so the compensation phase is pending. A search-result summary of that order (PDF itself blocked to me) says Iran told the Court on 24 December 2025 that no agreement had been reached, and the US confirmed on 2 February 2026; the specific deadlines are unconfirmed.",
+      "sources": [
+        "https://icj-cij.org/node/202630",
+        "https://www.icj-cij.org/case/164"
+      ]
+    },
+    {
+      "no": "P06",
+      "court": "PCIJ",
+      "short": "Factory at Chorzow",
+      "payer": "Poland",
+      "payee": "Germany (for two German companies)",
+      "judgment": "1928-09-13",
+      "what_happened": "In the merits judgment of 13 September 1928 the PCIJ held reparation due; the amount was not fixed. The ICJ's PCIJ index lists a later Order of 25 May 1929 (Series A No. 19, Indemnities). A search-result excerpt of a worldcourts.com page (page itself blocked to me, so unconfirmed) says a settlement between the Polish Treasury and the two companies was reached on 12 November 1928, Germany and Poland exchanged notes on 27 November 1928, and the PCIJ President recorded on 15 December 1928 that the suit was withdrawn.",
+      "sources": [
+        "https://www.icj-cij.org/pcij-series-a"
+      ]
+    },
+    {
+      "no": "116",
+      "court": "ICJ",
+      "short": "Armed Activities: Uganda's counter-claim",
+      "payer": "Democratic Republic of the Congo",
+      "payee": "Uganda",
+      "judgment": "2005-12-19",
+      "what_happened": "In 2005 the Court rejected Uganda's first counter-claim (alleged DRC support for anti-Ugandan rebels) and partly upheld the second: the DRC breached the Vienna Convention on Diplomatic Relations through attacks on the Ugandan embassy and maltreatment of diplomats, and by removing embassy property and archives. Whether the Court expressly declared reparation owed to Uganda, and any later outcome, is unconfirmed; the 2022 reparations judgment concerned the DRC's claim.",
+      "sources": [
+        "https://www.icj-cij.org/case/116"
+      ]
+    }
+  ]
+}

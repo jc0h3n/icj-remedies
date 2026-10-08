@@ -3,7 +3,7 @@ import { hbars, stackedHbars, dots, legend, fmtInt, fmtPct } from "./charts.js";
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 
-const TABS = [["overview", "Remedies"], ["interim", "Provisional measures"], ["advisory", "Advisory opinions"], ["cases", "Every case"], ["about", "About"]];
+const TABS = [["overview", "Remedies"], ["compensation", "Compensation"], ["interim", "Provisional measures"], ["advisory", "Advisory opinions"], ["cases", "Every case"], ["about", "About"]];
 
 // Outcome of a judgment on the merits, in fixed colour order.
 const OUTCOMES = [
@@ -72,7 +72,7 @@ function render() {
     `${i ? `<span class="muted"> / </span>` : ""}<a href="#tab=${k}&court=${court}"${k === current ? ` class="on" aria-current="page"` : ""}>${l}</a>`).join("");
   document.getElementById("courts").innerHTML = `<span class="muted">Court:</span> ` + Object.entries(COURTS).map(([k, [short, long]]) =>
     `<a href="#tab=${current}&court=${k}"${k === court ? ` class="on" aria-current="true"` : ""} title="${esc(k === "all" ? "Both courts together" : long)}">${k === "all" ? "Both" : esc(long)}</a>`).join(`<span class="muted"> / </span>`);
-  ({ overview, interim, advisory, cases: caseList, about })[current](h);
+  ({ overview, compensation, interim, advisory, cases: caseList, about })[current](h);
 }
 
 const merits = () => decisions.filter(d => d.stage === "ME" || d.stage === "CO" || d.stage === "RI");
@@ -268,6 +268,62 @@ function decisionHtml(d) {
     ${d.points?.length ? `<details><summary class="muted" style="cursor:pointer;font-size:0.85em">Operative part (${d.points.length} points)</summary><ul class="points">${d.points.map(p => `<li>${p.l ? `<span class="lab">(${esc(p.l)})</span>` : ""}${esc(p.t.replace(/^(?:By\s+\w+\s+votes?\s+to\s+\w+,?|Unanimously,?)\s*/i, ""))} <span class="vote">${p.v === "u" ? "unanimous" : p.v ? `${p.v[0]}–${p.v[1]}` : ""}</span></li>`).join("")}</ul></details>` : ""}
     ${d.src === "hand" ? `<p class="muted" style="font-size:0.8em">${d.series ? "Coded by hand from the Permanent Court's published decision (linked above)." : "Coded from the ICJ's summary; operative text not yet in the corpus."}</p>` : ""}
   </div>`;
+}
+
+// ---------------------------------------------------------------- Compensation
+// Hand-researched from public sources (data/compensation.json): what the Court awarded, how, and whether the money moved.
+function compensation() {
+  const C = D.compensation;
+  if (!C) { view.innerHTML = `<p class="summary">The compensation research has not been loaded.</p>`; return; }
+  const inCourt = x => court === "all" || x.court === COURTS[court][0];
+  const aw = C.awarded.filter(inCourt).sort((a, b) => a.award.localeCompare(b.award)), ow = C.owed.filter(inCourt);
+  const link = x => { const c = D.cases.find(c => c.court === x.court && String(c.no) === String(x.no)); return c ? `<a href="#tab=cases&court=${court}&case=${c.no}">${esc(x.short)}</a>` : esc(x.short); };
+  const yrs = (a, b) => a && b ? (new Date(b) - new Date(a)) / 3.15576e10 : null;
+  const amt = m => m?.amount != null ? money([m.currency, m.amount]) : "";
+  const share = x => x.claimed?.amount && x.total?.amount && x.claimed.currency === x.total.currency ? x.total.amount / x.claimed.amount : null;
+  const fmtYrs = v => v === 0 ? "same judgment" : v < 1 ? `${Math.round(v * 12)} months` : `${v.toFixed(1)} years`;
+  const tone = s => /^paid/.test(s) ? "ok" : /settled|partly/.test(s) ? "mid" : /not paid/.test(s) ? "bad" : "";
+  const status = s => `<span class="pill status ${tone(s)}">${esc(s)}</span>`;
+  const paid = aw.filter(x => /^paid/.test(x.status)).length;
+  const waits = aw.map(x => yrs(x.merits, x.award)).filter(v => v != null).sort((a, b) => a - b);
+
+  view.innerHTML = `
+    <p class="summary">${aw.length === 1 ? "Only once has" : `Only ${aw.length} times ${court === "all" ? "have the two courts" : "has the Court"}`} put a figure on what one state owed another. ${[[paid, "paid as ordered"], [aw.filter(x => /settled/.test(x.status)).length, "settled only decades later, by a separate deal"],
+      [aw.filter(x => /not paid|partly/.test(x.status)).length, "still unpaid or partly paid"], [aw.filter(x => x.status === "unconfirmed").length, "no public record of whether the money was paid"]]
+      .filter(([n]) => n).map(([n, t], i) => `${i ? "" : ""}${n} ${/^no public/.test(t) ? `with ${t}` : `${n === 1 ? "was" : "were"} ${t}`}`).join("; ").replace(/^./, c => c.toUpperCase())}. In ${ow.length} more cases ${court === "all" ? "a court" : "the Court"} said reparation was owed but never fixed an amount.</p>
+    <div class="tiles">
+      ${tile("Amounts fixed", aw.length, aw.map(x => esc(x.short)).join(" · "))}
+      ${tile("Paid as ordered", paid, `of ${aw.length}`)}
+      ${waits.length ? tile("Merits to award", fmtYrs(waits[waits.length >> 1]), "median wait for the figure") : ""}
+      ${tile("Owed, never fixed", ow.length, "settled, dropped or pending")}
+    </div>
+    <div class="grid2">
+      ${chart("c-claim", "How much of the claim the Court awarded", "Award as a share of what the claimant asked for, where both are in the same currency.")}
+      ${chart("c-wait", "How long the figure took", "From the judgment finding the breach to the judgment fixing the amount.")}
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Case</th><th>Payer → payee</th><th>Award</th><th class="num">Claimed</th><th class="num">Awarded</th><th>Status</th></tr></thead>
+      <tbody>${aw.map(x => `<tr><td>${link(x)}</td><td>${esc(x.payer)} → ${esc(x.payee)}</td><td>${fmtDate(x.award)}</td><td class="num money">${amt(x.claimed)}</td><td class="num money">${amt(x.total)}</td><td>${status(x.status)}</td></tr>`).join("")}</tbody>
+    </table></div>
+    ${aw.map(x => `<section class="comp-card">
+      <h2 class="section-title">${link(x)} <span class="muted">${esc(x.payer)} → ${esc(x.payee)}</span> ${status(x.status)}</h2>
+      <dl class="comp-facts">
+        <dt>Breach found</dt><dd>${fmtDate(x.merits)}</dd>
+        <dt>Amount fixed</dt><dd>${fmtDate(x.award)}${x.merits !== x.award ? ` <span class="muted">(${fmtYrs(yrs(x.merits, x.award))} later)</span>` : ""}</dd>
+        <dt>Awarded</dt><dd>${(x.heads || []).map(h => `${esc(h.label)}: ${h.amount === 0 ? `<span class="muted">rejected</span>` : `<span class="money">${amt(h)}</span>`}`).join("<br>")}${x.heads?.length > 1 ? `<br><b>Total: <span class="money">${amt(x.total)}</span></b>` : !x.heads?.length ? `<span class="money">${amt(x.total)}</span>` : ""}</dd>
+        ${x.claimed?.amount ? `<dt>Claimed</dt><dd><span class="money">${amt(x.claimed)}</span>${x.claimed.note ? ` <span class="muted">${esc(x.claimed.note)}</span>` : ""}${share(x) != null ? ` <span class="muted">(${fmtPct(share(x))} awarded)</span>` : ""}</dd>` : ""}
+        ${x.terms ? `<dt>Terms</dt><dd>${esc(x.terms)}</dd>` : ""}
+        ${x.method ? `<dt>How the Court valued it</dt><dd>${esc(x.method)}</dd>` : ""}
+        ${x.history?.length ? `<dt>What happened</dt><dd><ol class="history">${x.history.map(e => `<li><b>${esc(e.date)}</b> ${esc(e.event)}</li>`).join("")}</ol></dd>` : ""}
+      </dl>
+      <ul class="sources">${(x.sources || []).map(u => `<li><a href="${esc(u)}">${esc(u.replace(/^https?:\/\/(www\.)?/, ""))}</a></li>`).join("")}</ul>
+    </section>`).join("")}
+    ${ow.length ? `<h2 class="section-title">Owed, but never fixed by the Court</h2>
+    <ul class="sources">${ow.map(x => `<li>${link(x)} (${esc(x.judgment.slice(0, 4))}), ${esc(x.payer)} → ${esc(x.payee)}: ${esc(x.what_happened)}${(x.sources || []).length ? ` ${x.sources.map((u, i) => `<a href="${esc(u)}">[${i + 1}]</a>`).join(" ")}` : ""}</li>`).join("")}</ul>` : ""}
+    <p class="caveat">Payment histories come from public sources (Court documents, government statements, news and legal commentary), researched ${esc(C.updated)}. The Court does not track or announce payment, so a missing report is not proof that nothing was paid.</p>`;
+
+  hbars(document.getElementById("c-claim"), aw.filter(x => share(x) != null).map(x => ({ label: x.short, value: share(x) })), { format: fmtPct, max: 1 });
+  hbars(document.getElementById("c-wait"), aw.map(x => ({ label: x.short, value: yrs(x.merits, x.award) ?? 0 })), { format: fmtYrs });
 }
 
 // ---------------------------------------------------------------- About

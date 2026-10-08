@@ -146,3 +146,14 @@ nav.tabs { font-size: 0.95em; }
 .rowkey { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 20px; margin: 10px 0 0; font-size: 0.82em; }
 .rowkey dt { font-weight: 600; color: var(--ink); }
 .rowkey dd { margin: 0; color: var(--ink-2); }
+/* Compensation tab */
+.comp-card { border-top: 1px solid var(--grid); margin-top: 28px; }
+.comp-card .section-title { margin-top: 18px; }
+.comp-facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; max-width: 95ch; margin: 10px 0; }
+.comp-facts dt { color: var(--muted); font-size: 0.9em; }
+.comp-facts dd { margin: 0; }
+.history { margin: 0; padding-left: 1.2em; }
+.history li { margin-bottom: 3px; }
+.pill.status.ok { border-color: var(--c3, #2e8b57); }
+.pill.status.bad { border-color: var(--c1, #c0504d); }
+@media (max-width: 600px) { .comp-facts { grid-template-columns: 1fr; } .comp-facts dt { margin-top: 6px; } }
