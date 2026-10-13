@@ -335,8 +335,8 @@ function about() {
     <ul class="sources">
       <li><b>Text.</b> The operative part of every judgment, order and opinion to ${esc(D.corpus.cutoff)} comes from the Corpus of Decisions: International Court of Justice by Seán Fobbe (version ${esc(D.corpus.version)}, <a href="https://doi.org/${esc(D.corpus.doi)}">doi:${esc(D.corpus.doi)}</a>, CC0). A script finds each operative part ("For these reasons, THE COURT,…") and splits it into numbered points and votes.</li>
       <li><b>Outcomes and remedies.</b> Merits, compensation and interpretation judgments and advisory opinions are coded by hand from those points. Preliminary objection judgments and provisional measures orders are classified by rules and spot-checked. A remedy counts as "refused" when the Court rejected a specific request for it, in the operative part or in its reasoning.</li>
-      <li><b>Newer decisions.</b> Decisions after the corpus are listed from the ICJ's case pages and coded by hand from the Court's published summaries; the site does not reproduce their text. Any decision the weekly update finds that has not been coded yet is listed at the foot of <a href="#tab=cases">Every case</a>.</li>
-      <li><b>Updates.</b> A weekly job checks Zenodo for a new corpus version and the ICJ's case pages for new decisions.</li>
+      <li><b>Newer decisions.</b> Decisions after the corpus are listed from the ICJ's case pages and coded by hand from the Court's published summaries; the site does not reproduce their text. Any decision a rebuild finds that has not been coded yet is listed at the foot of <a href="#tab=cases">Every case</a>.</li>
+      <li><b>Updates.</b> Each rebuild checks Zenodo for a new corpus version and the ICJ's case pages for new decisions.</li>
     </ul>
     <h2 class="section-title">Caveats</h2>
     <ul class="sources">

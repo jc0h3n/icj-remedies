@@ -27,7 +27,7 @@ How the coding works:
 - **Preliminary-objection judgments and provisional measures orders** are classified by rules (`scripts/classify.mjs`) and spot-checked. Corrections go in `data/coding.json`.
 - **Decisions after the corpus** are coded from the ICJ's published summaries; their text is not reproduced.
 
-The ICJ's PDFs sit behind a bot check and are not downloaded. When the weekly job finds a new decision that hasn't been coded, the site lists it as awaiting coding.
+The ICJ's PDFs sit behind a bot check and are not downloaded. When a rebuild finds a new decision that hasn't been coded, the site lists it as awaiting coding.
 
 ## Running it locally
 
@@ -38,7 +38,7 @@ npm run data    # download the corpus and ICJ lists, build site/data/icj.json
 npm run serve   # http://localhost:8080
 ```
 
-A GitHub Action refreshes the data every Monday, commits the extracts in `data/`, and redeploys the site.
+A GitHub Action refreshes the data, commits the extracts in `data/`, and redeploys the site whenever changes are pushed (or when run by hand from the Actions tab).
 
 ## Privacy
 

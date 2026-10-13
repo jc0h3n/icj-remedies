@@ -1,12 +1,10 @@
 # Refetches the CD-ICJ corpus from Zenodo and the ICJ case lists, commits the refreshed extracts in data/, rebuilds
-# the site data and publishes the site to GitHub Pages. Runs on every push to main, every Monday, and on demand.
+# the site data and publishes the site to GitHub Pages. Runs on every push to main and on demand (no weekly schedule).
 name: Update and deploy
 
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: "23 6 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -27,7 +25,7 @@ jobs:
         with:
           node-version: 22
       - run: npm run data
-      # Keep the weekly corpus extract and the ICJ case lists in the repository, so the
+      # On manual runs, keep the corpus extract and the ICJ case lists in the repository, so the
       # history builds up and a failed source never blanks the site. Pushes with GITHUB_TOKEN don't retrigger this workflow.
       - name: Commit refreshed data
         if: github.event_name != 'push'
