@@ -34,7 +34,7 @@ for (const d of corpus.docs) {
   }
   if (d.type === "ORD") {
     const text = clean(d.disp);
-    if (!/(?:provisional|interim)\s+measures|\bindicat/i.test(text) || /special\s+Chamber/i.test(text)) continue;
+    if (!/(?:provisional|interim)\s+measures|\bindicat/i.test(text) || /special\s+Chamber/i.test(text) || coding[key]?.skip) continue;
     const pm = pmOutcome(text);
     if (pm.outcome === "other") pm.outcome = /\b(?:reaffirms|confirms)\b/i.test(text) ? "indicated" : "refused";
     Object.assign(dec, { stage: "PM", pm: pm.outcome, kinds: pm.kinds }, coding[key] || {});

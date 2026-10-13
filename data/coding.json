@@ -665,5 +665,14 @@
   "pm": "refused",
   "kinds": [],
   "s": "Armenia's request to modify the 2021 measures rejected; the Court reaffirmed them."
+ },
+ "91:1993-09-13": {
+  "pm": "refused",
+  "kinds": [],
+  "s": "Both parties' new requests declined: the Court said the situation called not for additional measures but for immediate and effective implementation of those of 8 April 1993, which it reaffirmed."
+ },
+ "150:2013-04-18": {
+  "skip": true,
+  "s": "Order on Nicaragua's counter-claims, not on provisional measures; it only mentions the 2011 measures."
  }
 }
